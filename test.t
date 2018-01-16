@@ -1,3 +1,4 @@
 je fait un fichier de test
 jifdsjj
-test
+locale
+je suis un Developer
