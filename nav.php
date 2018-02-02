@@ -12,14 +12,12 @@
                             <div class="dropdown-menu" role="menu">
                               <a class="dropdown-item" role="presentation" href="#">Ordinateur</a>
                               <a class="dropdown-item" role="presentation" href="#">Impriman</a>
-                              <a class="dropdown-item" role="presentation" href="#">Third Item</a>
                             </div>
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Assistance</a>
                             <div class="dropdown-menu" role="menu">
                               <a class="dropdown-item" role="presentation" href="#">Tickets</a>
                               <a class="dropdown-item" role="presentation" href="#">Créer un ticket</a>
-                              <a class="dropdown-item" role="presentation" href="#">Third Item</a>
                             </div>
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Administrateur</a>
@@ -27,6 +25,14 @@
                               <a class="dropdown-item" role="presentation" href="#">Utilisateur</a>
                               <a class="dropdown-item" role="presentation" href="#">Groupe</a>
                               <a class="dropdown-item" role="presentation" href="#">Profils</a>
+                            </div>
+                        </li>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Mon compte</a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item" role="presentation" href="#">Grade</a>
+                                <a class="dropdown-item" role="presentation" href="#">Notification</a>
+                              <a class="dropdown-item" role="presentation" href="#">Modification</a>
+                              <a class="dropdown-item" role="presentation" href="#">Deconnexion</a>
                             </div>
                         </li>
                     </ul>
