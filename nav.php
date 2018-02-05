@@ -11,7 +11,8 @@
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Composent </a>
                             <div class="dropdown-menu" role="menu">
                               <a class="dropdown-item" role="presentation" href="#">Ordinateur</a>
-                              <a class="dropdown-item" role="presentation" href="#">Impriman</a>
+                              <a class="dropdown-item" role="presentation" href="#">Imprimant</a>
+                              <a class="dropdown-item" role="presentation" href="parc/parcCompoA.php">Autre</a>
                             </div>
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Assistance</a>
