@@ -10,8 +10,8 @@
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php">Accueil </a></li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Composent </a>
                             <div class="dropdown-menu" role="menu">
-                              <a class="dropdown-item" role="presentation" href="#">Ordinateur</a>
-                              <a class="dropdown-item" role="presentation" href="#">Imprimant</a>
+                              <a class="dropdown-item" role="presentation" href="parc/parcCompoO.php">Ordinateur</a>
+                              <a class="dropdown-item" role="presentation" href="parc/parcCompoI.php">Imprimant</a>
                               <a class="dropdown-item" role="presentation" href="parc/parcCompoA.php">Autre</a>
                             </div>
                         </li>
