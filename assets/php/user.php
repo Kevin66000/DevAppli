@@ -30,7 +30,7 @@ if (role[user->role]->deleteNote == true) {
 }
 */
 
-
+//voire le fonctionnement du PDO objet <==================================
 
 /**
  * classe user
