@@ -13,8 +13,7 @@
 </head>
 
 <body>
-    <?php include '../nav.php'; ?>
-    <?php
+    <?php include '../nav.php'; 
     //vaérification du drois d'accsé
      if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
 
