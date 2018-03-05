@@ -16,13 +16,15 @@
     <?php include '../nav.php'; ?>
     <?php
     //vaérification du drois d'accsé
-    if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
+     if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
 
       //si le boutton Valider est clicker
       if (isset($_POST['formjoutercomposent'])) {
 
         //variable
-        $nomCompo = htmlspecialchars($_POST['nomCompo']);
+        $ternairError = true;
+
+        $nomCompo = !empty($_POST['nomCompo']) ? htmlspecialchars($_POST['nomCompo']) : $ternairError = false;
         $lieu = intval(htmlspecialchars($_POST['lieu']));
         $statut = intval(htmlspecialchars($_POST['statut']));
         $gabarit = htmlspecialchars($_POST['gabarit']);
@@ -34,8 +36,8 @@
 
 
         //test si les champs ne son pas vide
-        if (!empty($_POST['nomCompo']) && !empty($_POST['lieu']) && !empty($_POST['statut']) && !empty($_POST['gabarit']) && !empty($_POST['type']) && !empty($_POST['fabricant']) && !empty($_POST['modele']) && !empty($_POST['numSerie'])) {
-
+        if ($ternairError) {//!empty($_POST['nomCompo']) && !empty($_POST['lieu']) && !empty($_POST['statut']) && !empty($_POST['gabarit']) && !empty($_POST['type']) && !empty($_POST['fabricant']) && !empty($_POST['modele']) && !empty($_POST['numSerie'])
+          echo "oui";
           //test si les type son correcte
           if (is_numeric($_POST['prix']) && is_numeric($_POST['quantite']) && is_numeric($_POST['categorie'])) {
 
@@ -66,8 +68,11 @@
           }
         }else {
           $erreur = "Tous les champs doivent être complétés !";
-        }
+      }else {
+        echo "non";
       }
+      }
+    }
       ?>
 
 
