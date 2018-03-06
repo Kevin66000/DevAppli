@@ -15,7 +15,7 @@
 <body>
     <?php include '../nav.php';
     //vaérification du drois d'accsé
-     if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
+     if (isset($_SESSION['id']) && $_SESSION['admin'] == 'Admin') {
 
       //si le boutton Valider est clicker
       if (isset($_POST['formjoutercomposent'])) {
@@ -32,7 +32,7 @@
         $modele = htmlspecialchars($_POST['modele']) ? htmlspecialchars($_POST['modele']) : $ternairError = false;
         $numSerie = htmlspecialchars($_POST['numSerie']) ? htmlspecialchars($_POST['numSerie']) : $ternairError = false;
         $addrMac = htmlspecialchars($_POST['addreMac']) ? htmlspecialchars($_POST['addreMac']) : $ternairError = false;
-        $referenceCompo = htmlspecialchars($_POST['referenceCompo']);
+        $referenceCompo = htmlspecialchars($_POST['referenceCompo']) ? htmlspecialchars($_POST['referenceCompo']) : $ternairError = false;
 
 
         //test si les champs ne son pas vide
@@ -58,7 +58,7 @@
       }
     }
       ?>
-      
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
