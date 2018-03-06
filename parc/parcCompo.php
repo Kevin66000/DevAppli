@@ -14,7 +14,36 @@
 
 <body>
     <?php include '../nav.php'; ?>
-
+    <table class="table">
+        <thead>
+            <tr style="color:rgb(0,0,0);font-size:19px;">
+                <th class="align-content-center"><span style="text-decoration: underline;">Nom</span></th>
+                <th><span style="text-decoration: underline;">Reference</span></th>
+                <th><span style="text-decoration: underline;">Lieu</span></th>
+                <th><span style="text-decoration: underline;">Statut</span></th>
+                <th><span style="text-decoration: underline;">Gabarit</span></th>
+                <th><span style="text-decoration: underline;">Type</span></th>
+                <th><span style="text-decoration: underline;">Fabricant</span></th>
+                <th><span style="text-decoration: underline;">Modèle</span></th>
+                <th><span style="text-decoration: underline;">Num Série</span></th>
+                <th><span style="text-decoration: underline;">Adresse Mac</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Cell 1</strong></td>
+                <td>Cell 2</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+            </tr>
+        </tbody>
+    </table>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

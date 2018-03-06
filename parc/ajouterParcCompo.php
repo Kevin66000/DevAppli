@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../nav.php'; 
+    <?php include '../nav.php';
     //vaérification du drois d'accsé
      if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
 
@@ -58,6 +58,7 @@
       }
     }
       ?>
+      
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
