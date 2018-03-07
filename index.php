@@ -29,10 +29,10 @@
                 //remplachement du header("Location: index.php); par du js a cause d'une erreur
                 echo '<script> document.location.replace("accueil.php"); </script>';
               } else {
-                $erreur = "<br />Mauvais pseudo ou mot de passe !";
+                $erreur = "<br />Mauvais pseudo ou mot de passe.";
               }
             } else {
-              $erreur = "<br />Tous les champs doivent être complétés !";
+              $erreur = "<br />Tous les champs doivent être complétés.";
             }
           }
           ?>
