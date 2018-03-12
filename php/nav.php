@@ -17,13 +17,13 @@
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Assistance</a>
                             <div class="dropdown-menu" role="menu">
-                              <a class="dropdown-item" role="presentation" href="#">Tickets</a>
+                              <a class="dropdown-item" role="presentation" href="ticket.php">Tickets</a>
                               <a class="dropdown-item" role="presentation" href="#">Notes</a>
                             </div>
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Administrateur</a>
                             <div class="dropdown-menu" role="menu">
-                              <a class="dropdown-item" role="presentation" href="#">Utilisateur</a>
+                              <a class="dropdown-item" role="presentation" href="administrateur.php">Utilisateur</a>
                               <a class="dropdown-item" role="presentation" href="#">Groupe</a>
                               <a class="dropdown-item" role="presentation" href="#">Profils</a>
                             </div>
@@ -33,7 +33,7 @@
                                 <a class="dropdown-item" role="presentation" href="#">Grade</a>
                                 <a class="dropdown-item" role="presentation" href="#">Notification</a>
                               <a class="dropdown-item" role="presentation" href="#">Modification</a>
-                              <a class="dropdown-item" role="presentation" href="#">Deconnexion</a>
+                              <a class="dropdown-item" role="presentation" href="deconnexion.php">Deconnexion</a>
                             </div>
                         </li>
                     </ul>
