@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../nav.php'; ?>
+    <?php include 'nav.php'; ?>
     <table class="table">
         <thead>
             <tr style="color:rgb(0,0,0);font-size:19px;">
