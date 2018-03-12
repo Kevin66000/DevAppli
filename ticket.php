@@ -13,26 +13,34 @@
 </head>
 
 <body>
-    <?php include 'php/nav.php'; ?>
+    <?php include 'php.nav.php'; ?>
     <table class="table">
         <thead>
             <tr style="color:rgb(0,0,0);font-size:19px;">
-                <th class="align-content-center"><span style="text-decoration: underline;">Nom</span></th>
-                <th><span style="text-decoration: underline;">Reference</span></th>
-                <th><span style="text-decoration: underline;">Lieu</span></th>
+                <th class="align-content-center"><span style="text-decoration: underline;">ID</span></th>
+                <th><span style="text-decoration: underline;">Titre</span></th>
                 <th><span style="text-decoration: underline;">Statut</span></th>
-                <th><span style="text-decoration: underline;">Gabarit</span></th>
-                <th><span style="text-decoration: underline;">Type</span></th>
-                <th><span style="text-decoration: underline;">Fabricant</span></th>
-                <th><span style="text-decoration: underline;">Modèle</span></th>
-                <th><span style="text-decoration: underline;">Num Série</span></th>
-                <th><span style="text-decoration: underline;">Adresse Mac</span></th>
+                <th><span style="text-decoration: underline;">Dernière modification</span></th>
+                <th><span style="text-decoration: underline;">Date d'ouverture</span></th>
+                <th><span style="text-decoration: underline;">Priorité</span></th>
+                <th><span style="text-decoration: underline;">Demandeur</span></th>
+                <th><span style="text-decoration: underline;">Temps de résolution</span></th>
+                <th><span style="text-decoration: underline;">Urgence</span></th>
+                <th><span style="text-decoration: underline;">Description</span></th>
+                <th><span style="text-decoration: underline;">Impact</span></th>
+                <th><span style="text-decoration: underline;">Temps de résolution + Pregession</span></th>
+                <th><span style="text-decoration: underline;">Temps de résolution dépassé</span></th>
+                <th><span style="text-decoration: underline;">Date de résolution</span></th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td><strong>Cell 1</strong></td>
                 <td>Cell 2</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
+                <td>Cell 3</td>
                 <td>Cell 3</td>
                 <td>Cell 3</td>
                 <td>Cell 3</td>

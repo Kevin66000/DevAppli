@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="./assets/css/stylesAccueil.min.css">
+    <link rel="stylesheet" href="assets/css/stylesAccueil.min.css">
 </head>
 
 <body>
@@ -17,16 +17,15 @@
     <table class="table">
         <thead>
             <tr style="color:rgb(0,0,0);font-size:19px;">
-                <th class="align-content-center"><span style="text-decoration: underline;">Nom</span></th>
-                <th><span style="text-decoration: underline;">Reference</span></th>
+                <th class="align-content-center"><span style="text-decoration: underline;">Identifiant</span></th>
+                <th><span style="text-decoration: underline;">Entités (Profil)</span></th>
+                <th><span style="text-decoration: underline;">Nom</span></th>
+                <th><span style="text-decoration: underline;">Prénom</span></th>
+                <th><span style="text-decoration: underline;">Adresse mail</span></th>
+                <th><span style="text-decoration: underline;">Téléphone</span></th>
                 <th><span style="text-decoration: underline;">Lieu</span></th>
-                <th><span style="text-decoration: underline;">Statut</span></th>
-                <th><span style="text-decoration: underline;">Gabarit</span></th>
-                <th><span style="text-decoration: underline;">Type</span></th>
-                <th><span style="text-decoration: underline;">Fabricant</span></th>
-                <th><span style="text-decoration: underline;">Modèle</span></th>
-                <th><span style="text-decoration: underline;">Num Série</span></th>
-                <th><span style="text-decoration: underline;">Adresse Mac</span></th>
+                <th><span style="text-decoration: underline;">Actif</span></th>
+                <th><span style="text-decoration: underline;">Langue</span></th>
             </tr>
         </thead>
         <tbody>
@@ -40,12 +39,12 @@
                 <td>Cell 3</td>
                 <td>Cell 3</td>
                 <td>Cell 3</td>
-                <td>Cell 3</td>
             </tr>
         </tbody>
     </table>
 
-
+    <div class="simple-slider"></div>
+    <div></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>

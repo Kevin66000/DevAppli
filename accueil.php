@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php include 'php/setting.bdd.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include 'nav.php'; ?>
+    <?php include 'php/nav.php'; ?>
     <div>
         <div class="container">
             <div class="row">
