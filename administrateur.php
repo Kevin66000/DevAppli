@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 <?php include 'php/setting.bdd.php'; ?>
-=======
-<?php session_start(); ?>
->>>>>>> 7dfef659d6e38e149297b9530ddc173da4dacd3c
-<!DOCTYPE html>
 <html>
 
 <head>
