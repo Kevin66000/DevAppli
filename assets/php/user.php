@@ -6,38 +6,38 @@
 user = {
   name:"toto",
   role:"visiteur"
-}
-
-role = {
-  visiteur:{
-    creatNote:true,
-    deleteNote:false,
-    createTiket:true,
-    deleteTiket:false
-  },
-  admin:{
-    creatNote:true,
-    deleteNote:true,
-    createTiket:true,
-    deleteTiket:true
+  role = {
+    visiteur:{
+      creatNote:true,
+      deleteNote:false,
+      createTiket:true,
+      deleteTiket:false
+    },
+    admin:{
+      creatNote:true,
+      deleteNote:true,
+      createTiket:true,
+      deleteTiket:true
+    }
   }
 }
 
-if (role[user->role]->deleteNote == true) {
+user->role->getpermition('libelle')
+
+if (user->rolegetpermission('supprimernote') == true) {
   //supprimer la note
 }else {
   //l'user n'a pas l'otorisation pour supprimer la note
 }
 */
 
-//voire le fonctionnement du PDO objet <==================================
-
 /**
  * classe user
  */
 class user{
   //attribut
-
+  $nom;
+  $prenome;
 
   //methodes
   function __construct(argument){
