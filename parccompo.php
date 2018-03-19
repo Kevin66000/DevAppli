@@ -14,6 +14,8 @@
 
 <body>
     <?php include 'php/nav.php'; ?>
+    <div><button class="btn btn-success active btn-block btn-lg float-none" type="submit" data-bs-hover-animate="pulse" style="max-width:256px;margin-top:none;margin-left:none;height:57px;">Ajouter un Composant&nbsp;<i class="fa fa-chevron-circle-right"></i></button></div>
+
     <table class="table">
         <thead>
             <tr style="color:rgb(0,0,0);font-size:19px;">
