@@ -5,11 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="./assets/css/stylesAccueil.min.css">
+    <title>ajouterCompo</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.minAjC.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.minAjC.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/ss-contactAjC.css">
+    <link rel="stylesheet" href="assets/css/stylesAjC.css">
 </head>
 
 <body>
@@ -58,13 +59,57 @@
       }
     }
       ?>
+      
+      <section id="contact" style="padding:40px;padding-right:5px;padding-left:4px;">
+          <div class="container-fluid">
+              <form action="javascript:void();" method="get" id="contactForm" style="padding:15px;">
+                  <div class="form-row" style="margin-left:0px;margin-right:0px;padding:10px;">
+                      <div class="col-12 col-md-6" id="message" style="padding-right:20px;padding-left:20px;">
+                          <fieldset>
+                              <legend style="font-size:37px;color:rgb(252,174,24);"><i class="fa fa-plus"></i> Ajouter un composant&nbsp;</legend>
+                          </fieldset>
+                          <div class="form-group has-feedback"><label for="from_name">Nom du composant</label><input class="form-control" type="text" name="nomCompo" required="" id="from_name" tabindex="-1"></div>
+                          <div class="form-group has-feedback"><label for="from_name">Numéro série</label><input class="form-control" type="text" name="numSerie" required="" id="from_name" tabindex="-1"></div>
+                          <div class="form-group has-feedback"><label for="from_email">Adresse MAC</label><input class="form-control" type="email" name="addreMac" required="" id="from_name"></div>
+                          <div class="form-row">
+                              <div class="col-sm-6">
+                                  <div class="form-group"><label for="calltime">Statut</label><select class="form-control" name="Call Time" required="" id="calltime"><option value="">Statut</option><option value="">Active</option><option value="">En cours</option><option value="">...</option></select></div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <div class="form-group"><label for="calltime">Salle</label><select class="form-control" name="Call Time" required="" id="calltime"><option value="">Lieu</option><option value="">111i</option><option value="">110i</option><option value="">109i</option></select></div>
+                              </div>
+                          </div>
+                          <div class="form-group has-feedback"><label for="from_name">Type</label><input class="form-control" type="text" name="type" required="" id="from_name" tabindex="-1"></div>
+                      </div>
+                      <div class="col-12 col-md-6" id="message" style="padding-right:20px;padding-left:20px;">
+                          <fieldset></fieldset>
+                          <div class="form-group has-feedback"><label for="from_email">Fabricant</label><input class="form-control" type="email" name="fabricant" required="" id="from_name"></div>
+                          <div class="form-row">
+                              <div class="col-sm-6">
+                                  <div class="form-group has-feedback"><label for="from_phone">Modele</label><input class="form-control" type="text" name="modele" id="from_name"></div>
+                              </div>
+                              <div class="col-sm-6">
+                                  <div class="form-group has-feedback"><label for="from_phone">Gabarit&nbsp;</label><input class="form-control" type="text" name="gabarit" id="from_name"></div>
+                              </div>
+                          </div>
+                          <div class="form-group has-feedback"><label for="from_email">Référence</label><input class="form-control" type="email" name="referenceCompo" required="" id="from_name"></div>
+                          <div class="form-group"><label for="Commentaire">Comments</label><textarea class="form-control" rows="5" name="Comments" placeholder="Entrer un commentaire ..." id="comments"></textarea></div><button class="btn btn-success active btn-block btn-lg float-left"
+                              type="submit" data-bs-hover-animate="rubberBand" style="max-width:170px;margin-top:none;margin-left:none;">Valider&nbsp;<i class="fa fa-check"></i></button><button class="btn btn-danger active btn-block btn-lg float-right" type="submit"
+                              data-bs-hover-animate="shake" style="max-width:170px;margin:none;margin-top:0px;padding-top:none;padding-right:none;">Annuler&nbsp;<i class="fa fa-remove"></i></button>
+                          <hr>
+                      </div>
+                      <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
+                      </div>
+                      <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </section>
 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
-</body>
+      <script src="assets/js/jquery.minAjC.js"></script>
+      <script src="assets/bootstrap/js/bootstrap.minAjC.js"></script>
+      <script src="assets/js/bs-animationAjC.js"></script>
+  </body>
 
 </html>
