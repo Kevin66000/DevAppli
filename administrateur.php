@@ -1,4 +1,3 @@
-<?php include 'php/setting.bdd.php'; ?>
 <html>
 
 <head>

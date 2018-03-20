@@ -1,4 +1,4 @@
-<?php include 'php/setting.bdd.php'; ?>
+<?php require 'php/setting.bdd.php'; ?>
 <!DOCTYPE html>
 <html>
   <head>
