@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php include '../nav.php';
+    <?php include '../php/nav.php';
     //vaérification du drois d'accsé
      if (isset($_SESSION['id']) && $_SESSION['admin'] == 'Admin') {
 
@@ -58,8 +58,9 @@
         }
       }
     }
+    }
       ?>
-      
+
       <section id="contact" style="padding:40px;padding-right:5px;padding-left:4px;">
           <div class="container-fluid">
               <form action="javascript:void();" method="get" id="contactForm" style="padding:15px;">

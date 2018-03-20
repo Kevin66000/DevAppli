@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include 'nav.php'; ?>
+    <?php include '../php/nav.php'; ?>
 
 
 

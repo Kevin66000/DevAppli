@@ -14,7 +14,7 @@
         <form method="post">
           <?php
           if(isset($_POST['formconnexion'])) {
-            $adminconnect = htmlspecialchars($_POST['adminconnect']);
+            $adminconnect = htmlspecialchars($_POST['adminconnect']);// REVIEW: (adminconnect = emailUtilisateur ) : l'identifien de l'utilisateur
             $mdpconnect = sha1($_POST['mdpconnect']);
             if(!empty($adminconnect) AND !empty($mdpconnect)) {
               $requser = $bdd->prepare("SELECT utilisateur.IDUtilisateur, utilisateur.emailUtilisateur FROM utilisateur WHERE emailUtilisateur = ? AND mdpUtilisateur = ?");
@@ -22,7 +22,7 @@
               $userexist = $requser->rowCount();
               if($userexist == 1) {
                 $userinfo = $requser->fetch();
-                $_SESSION['id'] = $userinfo['IDUtilisateur'];
+                $_SESSION['id'] = $userinfo['IDUtilisateur'];// TODO: objet user
                 $_SESSION['admin'] = $userinfo['Admin'];
                 $_SESSION['mail'] = $userinfo['Email'];
 
