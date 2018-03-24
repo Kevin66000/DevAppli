@@ -4,21 +4,22 @@
  */
 class role{
   //property
-  $libellerole = "";
-  $droit = array('libeller' => 'bln', );
+  private $libelleRole;
+  private $permissions;
 
   //methode
-  function __construct(argument){
-    # code...
-  }
-  public function rolegetpermission($plibelle){
-    // recherche $plibelle dans le arry()
+  public function __construct($pLblbRole, $pPermissions){
+    $this->$libellerole = $pLblbRole;
+    $this->$permissions = $pPermissions;
   }
 
-  public function rolesetpermission($plibelle, $bln){
-    // set $plibelle dans le arry()
+  public function GetRole(){
+    return $this->$libellerole
+  }
+
+  public function GetPermission($pPermission){
+    return $this->$permissions[$pPermission];
   }
 }
-
 
 ?>
