@@ -1,4 +1,3 @@
-<?php include 'php/setting.bdd.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -13,7 +12,7 @@
 </head>
 
 <body>
-    <?php include 'php.nav.php'; ?>
+    <?php include 'php/nav.php'; ?>
     <table class="table">
         <thead>
             <tr style="color:rgb(0,0,0);font-size:19px;">
