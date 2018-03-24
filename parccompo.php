@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="assets/css/Navigation-e-commercePC.css">
       <link rel="stylesheet" href="assets/css/Navigation-with-SearchPC.css">
       <link rel="stylesheet" href="assets/css/stylesPC.css">
-    <link rel="stylesheet" href="./assets/css/stylesAccueil.min.css">
+      <link rel="stylesheet" href="assets/css/stylesAccueil.min.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col offset-lg-0">
                     <div class="form-group" style="margin-top:10px;">
-                        <form class="float-left" style="width:460px;"><button class="btn btn-link btn-lg" href="./parc/ajouterParcCompo.php" type="button" data-bs-hover-animate="pulse" style="font-size:23px;margin-bottom:3px;">Ajouter un composant&nbsp;<i class="fa fa-plus"></i></button></form>
+                        <form class="float-left" style="width:460px;"><button class="btn btn-link btn-lg" onclick="document.location.href = 'parc/ajouterParcCompo.php" type="button" data-bs-hover-animate="pulse" style="font-size:23px;margin-bottom:3px;">Ajouter un composant&nbsp;<i class="fa fa-plus"></i></button></form>
                         <form class="float-right" style="width:460px;">
                             <div class="input-group"><button class="btn btn-primary" type="button" style="margin-top:5px;">Recherche</button><input class="form-control" type="search" name="recherche" style="margin-left:5px;margin-top:5px;"></div>
                         </form>
