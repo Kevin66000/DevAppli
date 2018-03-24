@@ -22,11 +22,7 @@
             <div class="row">
                 <div class="col offset-lg-0">
                     <div class="form-group" style="margin-top:10px;">
-<<<<<<< HEAD
-                        <form class="float-left" style="width:460px;"><button class="btn btn-link btn-lg" onclick="document.location.href = 'ajouterParcCompo.php'" type="button" data-bs-hover-animate="pulse" style="font-size:23px;margin-bottom:3px;">Ajouter un composant&nbsp;<i class="fa fa-plus"></i></button></form>
-=======
                         <form class="float-left" style="width:460px;"><button class="btn btn-link btn-lg" onclick="document.location.href = 'parc/ajouterParcCompo.php'" type="button" data-bs-hover-animate="pulse" style="font-size:23px;margin-bottom:3px;">Ajouter un composant&nbsp;<i class="fa fa-plus"></i></button></form>
->>>>>>> e62d04c9a22d5bad6f4cc644894af0b285366d62
                         <form class="float-right" style="width:460px;">
                             <div class="input-group"><button class="btn btn-primary" type="button" style="margin-top:5px;">Recherche</button><input class="form-control" type="search" name="recherche" style="margin-left:5px;margin-top:5px;"></div>
                         </form>
