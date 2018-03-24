@@ -18,7 +18,7 @@
           <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Assistance</a>
             <div class="dropdown-menu" role="menu">
               <a class="dropdown-item" role="presentation" href="ticket.php">Tickets</a>
-              <a class="dropdown-item" role="presentation" href="#">Notes</a>
+              <a class="dropdown-item" role="presentation" href="note.php">Notes</a>
             </div>
           </li>
           <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Administration</a>
