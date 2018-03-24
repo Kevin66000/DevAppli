@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../php/nav.php';
+    <?php include 'php/nav.php';
     //vaérification du drois d'accsé
      if (isset($_SESSION['id']) && $_SESSION['admin'] == 'Admin') {
 
