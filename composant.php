@@ -67,11 +67,7 @@
                             <td>Cell 10</td>
                             <td style="max-width:98px;">
                               <button class="btn btn-primary float-left" type="button" onclick="document.location.href = 'parc/ajouterParcCompo.php'" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
-<<<<<<< HEAD
                               <button class="btn btn-primary float-right" type="button" name="delproduit" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
-=======
-                              <button class="btn btn-primary float-right" type="button" onclick="document.location.href = ''" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
->>>>>>> bbf7b6568f39a5a4ab34e8524b5db8453280654f
                             </td>
                         </tr>
                     </tbody>
