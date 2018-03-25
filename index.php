@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/stylesIndex.min.css">
+    <link rel="stylesheet" href="/assets/css/stylesIndex.min.css">
   </head>
   <body>
     <div class="login-dark" style="background-image:url(&quot;assets/img/blackground.jpg&quot;);">

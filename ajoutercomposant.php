@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajouterCompo</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.minAjC.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.minAjC.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.minAjC.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.minAjC.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="assets/css/ss-contactAjC.css">
-    <link rel="stylesheet" href="assets/css/stylesAjC.css">
+    <link rel="stylesheet" href="/assets/css/ss-contactAjC.css">
+    <link rel="stylesheet" href="/assets/css/stylesAjC.css">
   </head>
 
   <body>
@@ -106,8 +106,8 @@
       </div>
     </section>
 
-    <script src="assets/js/jquery.minAjC.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.minAjC.js"></script>
-    <script src="assets/js/bs-animationAjC.js"></script>
+    <script src="/assets/js/jquery.minAjC.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.minAjC.js"></script>
+    <script src="/assets/js/bs-animationAjC.js"></script>
   </body>
 </html>
