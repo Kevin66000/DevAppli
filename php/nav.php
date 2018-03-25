@@ -29,7 +29,7 @@
           </li>
           <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Mon compte</a>
             <div class="dropdown-menu" role="menu">
-              <a class="dropdown-item" role="presentation" href="#">Profils</a>
+              <a class="dropdown-item" role="presentation" href="profil.php">Profils</a>
               <a class="dropdown-item" role="presentation" href="php/deconnexion.php">Deconnexion</a>
             </div>
           </li>
