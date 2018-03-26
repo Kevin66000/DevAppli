@@ -3,12 +3,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compo</title>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.minPC.css">
-    <link rel="stylesheet" href="/assets/fonts/font-awesome.minPC.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.minPTU.css">
+    <link rel="stylesheet" href="/assets/fonts/font-awesome.minPTU.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/Navigation-e-commercePC.css">
-    <link rel="stylesheet" href="/assets/css/Navigation-with-SearchPC.css">
-    <link rel="stylesheet" href="/assets/css/stylesPC.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-e-commercePTU.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-with-SearchPTU.css">
+    <link rel="stylesheet" href="/assets/css/stylesPTU.css">
     <link rel="stylesheet" href="/assets/css/stylesAccueil.min.css">
   </head>
 
@@ -21,13 +21,14 @@
         $reqdel = $bdd->prepare("DELETE FROM produits WHERE IDProduit = ?");
         $reqdel->execute(array($_POST['id']));
       }
+    }
     ?>
     <div>
       <div class="container">
         <div class="row">
           <div class="col offset-lg-0">
             <div class="form-group" style="margin-top:10px;">
-              <form class="float-left" style="width:460px;"><button class="btn btn-link btn-lg" onclick="document.location.href = 'parc/ajouterParcCompo.php'" type="button" data-bs-hover-animate="pulse" style="font-size:23px;margin-bottom:3px;">Ajouter un composant&nbsp;<i class="fa fa-plus"></i></button></form>
+              <form class="float-left" style="width:460px;"><button class="btn btn-link btn-lg" onclick="document.location.href = 'ajoutercomposant.php'" type="button" data-bs-hover-animate="pulse" style="font-size:23px;margin-bottom:3px;">Ajouter un composant&nbsp;<i class="fa fa-plus"></i></button></form>
               <form class="float-right" style="width:460px;">
                 <div class="input-group"><button class="btn btn-primary" type="button" style="margin-top:5px;">Recherche</button><input class="form-control" type="search" name="recherche" style="margin-left:5px;margin-top:5px;"></div>
               </form>
@@ -78,8 +79,8 @@
         </div>
       </div>
     </div>
-    <script src="/assets/js/jquery.minPC.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.minPC.js"></script>
-    <script src="/assets/js/bs-animationPC.js"></script>
+    <script src="/assets/js/jquery.minPTU.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.minPTU.js"></script>
+    <script src="/assets/js/bs-animationPTU.js"></script>
   </body>
 </html>
