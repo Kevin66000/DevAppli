@@ -18,7 +18,7 @@
         <div class="col-xs-12 ground-color text-center">
           <h1>Oops!</h1>
           <h2>500 Internal Server Error</h2>
-          <h2 class="error-details">Erreur interne au serveur réessayer plus tard! :'(</h2>
+          <h2 class="error-details">Erreur interne au serveur, réessayer plus tard! :'(</h2>
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@
         <div class="col-xs-12 ground-color text-center">
           <h1>Oops!</h1>
           <h2>404 Not Found</h2>
-          <h2 class="error-details">Désoler, la page que vous chercher n'existe pas! :'(</h2>
+          <h2 class="error-details">Désolé, la page que vous cherchez n'existe pas! :'(</h2>
         </div>
       </div>
     </div>
