@@ -1,3 +1,6 @@
+<?php
+require 'php/setting.bdd.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,7 +38,7 @@
 
                 foreach ($permissions as $pPermission) {
                   ?>
-                  <input type="checkbox" name="pe" value="<?php echo $permission['idPermission']; ?>"><?php echo $permission['libellerPermission']; ?>
+                  <input type="checkbox" name="pe" value="<?php echo $pPermission['idPermission']; ?>"><?php echo $pPermission['libellerPermission']; ?>
                   <?php
                 }
                 ?>
