@@ -17,4 +17,4 @@ if ($erreur) {
   <input type="text" name="nom" value="" placeholder="nom de la permotion">
   <button type="submit" name="button">ajouter la permition</button>
 </form>
-<h1>cette pages est provisoire elle sera supprimer</h1>
+<h1>Cette pages est provisoire elle sera supprimer</h1>
