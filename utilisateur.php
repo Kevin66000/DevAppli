@@ -14,14 +14,11 @@
 
   <body>
     <?php include 'php/nav.php';
-    if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
-      if (isset($_POST['delproduit'])) {
-        $reqdel = $bdd->prepare("DELETE FROM photoproduit WHERE IDProduit = ?");
-        $reqdel->execute(array($_POST['id']));
-        $reqdel = $bdd->prepare("DELETE FROM produits WHERE IDProduit = ?");
-        $reqdel->execute(array($_POST['id']));
-      }
-    }
+
+    //selectionne les toutes les utilisateurs
+    $reqSelectUsers = $bdd->prepare("SELECT * FROM utilisateur");
+    $reqSelectUsers->execute();
+    $users = $reqSelectUsers->fetchAll();
     ?>
     <div>
       <div class="container">
@@ -45,30 +42,40 @@
                       <th>Identifiant&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Entités (Profil)&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Nom&nbsp;<i class="fa fa-chevron-down"></i></th>
-                      <th style="max-width:66px;">Prenom&nbsp;<i class="fa fa-chevron-down"></i></th>
-                      <th>Adresse&nbsp;<i class="fa fa-chevron-down"></i></th>
-                      <th>Telephone</th>
-                      <th style="width:110px;">Lieu&nbsp;<i class="fa fa-chevron-down"></i></th>
+                      <th>Prenom&nbsp;<i class="fa fa-chevron-down"></i></th>
+                      <th>Adresse email&nbsp;<i class="fa fa-chevron-down"></i></th>
+                      <th style="min-width:110px;">Telephone&nbsp;<i class="fa fa-chevron-down"></i></th>
+                      <th>Telephone secondaire&nbsp;<i class="fa fa-chevron-down"></i></th>
+                      <th>Telephone portable&nbsp;<i class="fa fa-chevron-down"></i></th>
+                      <th>Matricule&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Actif&nbsp;<i class="fa fa-chevron-down"></i></th>
-                      <th>Langue</th>
+                      <th>Role&nbsp;<i class="fa fa-chevron-down"></i></th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style="font-size:12px;">
-                      <td><strong>Cell 1</strong></td>
-                      <td>Cell 2</td>
-                      <td>Cell 3</td>
-                      <td>Cell 4</td>
-                      <td>Cell 5</td>
-                      <td>Cell 6</td>
-                      <td>Cell 7</td>
-                      <td>Cell 8</td>
-                      <td>Cell 9</td>
-                      <td style="max-width:98px;">
-                        <button class="btn btn-primary float-left" type="button" onclick="document.location.href = 'parc/ajouterParcCompo.php'" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
-                        <button class="btn btn-primary float-right" type="button" name="delproduit" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
-                      </td>
-                    </tr>
+                    <?php
+                    foreach ($users as $user) {
+                      ?><tr style="font-size:12px;"><?php
+                        echo "<td>".$user['idUtilisateur']."</td>";
+                        echo "<td>".$user['nomAfficher']."</td>";
+                        echo "<td>".$user['nomUtilisateur']."</td>";
+                        echo "<td>".$user['prenomUtilisateur']."</td>";
+                        echo "<td>".$user['emailUtilisateur']."</td>";
+                        echo "<td>".$user['telUtilisateur']."</td>";
+                        echo "<td>".$user['tel2Utilisateur']."</td>";
+                        echo "<td>".$user['telMobileUtilisateur']."</td>";
+                        echo "<td>".$user['matriculeUtilisateur']."</td>";
+                        echo "<td>".$user['actifUtilisateur']."</td>";
+                        echo "<td>".$user['idRole']."</td>";
+                        ?>
+                        <td style="width:110px;">
+                          <button class="btn btn-primary float-left" type="button" onclick="document.location.href = 'parc/ajouterParcCompo.php'" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
+                          <button class="btn btn-danger float-right" type="button" name="delproduit" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
+                        </td>
+                      </tr>
+                      <?php
+                    }
+                    ?>
                   </tbody>
                 </table>
               </div>

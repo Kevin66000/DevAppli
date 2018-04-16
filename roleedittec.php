@@ -37,7 +37,8 @@ if (isset($_POST['submitaddrole'])) {
         <div class="alert alert-warning alert-dismissible fade show" role="alert">le role existe déja!
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button>'roleedittec.php'
+
         </div>
       </div>
       <?php

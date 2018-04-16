@@ -1,4 +1,6 @@
-<?php require 'setting.bdd.php'; ?>
+<?php
+require 'include.php';
+?>
 <div>
   <nav class="navbar navbar-light navbar-expand-md">
     <div class="container">

@@ -1,4 +1,33 @@
-<?php require 'php/setting.bdd.php'; ?>
+<?php require 'php/include.php';
+if(isset($_POST['formconnexion'])) {
+  $adminconnect = htmlspecialchars($_POST['adminconnect']);// REVIEW: (adminconnect = emailUtilisateur ) : l'identifien de l'utilisateur
+  $mdpconnect = sha1($_POST['mdpconnect']);
+  if(!empty($adminconnect) AND !empty($_POST['mdpconnect'])) {
+    $requser = $bdd->prepare("SELECT * FROM utilisateur WHER E emailUtilisateur = ? AND mdpUtilisateur = ?");
+    $requser->execute(array($adminconnect, $mdpconnect));
+    $userexist = $requser->rowCount();
+    if($userexist == 1) {
+      $userinfo = $requser->fetch();
+      if ($userinfo['actifUtilisateur']) {
+        //instensiation de l'objet utilisateur
+        $unutilisateur = new User($userinfo['idUtilisateur'], $userinfo['nomAfficher'], $userinfo['nomUtilisateur'], $userinfo['prenomUtilisateur'], $userinfo['emailUtilisateur'], $userinfo['telUtilisateur'], $userinfo['tel2Utilisateur'], $userinfo['telMobileUtilisateur'], $userinfo['matriculeUtilisateur']);
+
+        echo $unutilisateur->GetPseudo();
+        var_dump($unutilisateur);
+
+        //header("Location: accueil.php");
+        //echo '<script> document.location.replace("accueil.php"); </script>';
+      }else {
+        $erreur = "<br />Ce compte est désactiver.";
+      }
+    } else {
+      $erreur = "<br />Mauvais email ou mot de passe.";
+    }
+  } else {
+    $erreur = "<br />Tous les champs doivent être complétés.";
+  }
+}
+?>
 <!DOCTYPE html>
 <html style="height: 100%;">
   <head>
@@ -12,38 +41,14 @@
   <body style="height: 100%;">
     <div class="login-dark" style="background-image:url(&quot;assets/img/blackground.jpg&quot;);height: 100%;">
       <form method="post">
-        <?php
-        if(isset($_POST['formconnexion'])) {
-          $adminconnect = htmlspecialchars($_POST['adminconnect']);// REVIEW: (adminconnect = emailUtilisateur ) : l'identifien de l'utilisateur
-          $mdpconnect = sha1($_POST['mdpconnect']);
-          if(!empty($adminconnect) AND !empty($mdpconnect)) {
-            $requser = $bdd->prepare("SELECT utilisateur.IDUtilisateur, utilisateur.emailUtilisateur FROM utilisateur WHERE emailUtilisateur = ? AND mdpUtilisateur = ?");
-            $requser->execute(array($adminconnect, $mdpconnect));
-            $userexist = $requser->rowCount();
-            if($userexist == 1) {
-              $userinfo = $requser->fetch();
-              $_SESSION['id'] = $userinfo['IDUtilisateur'];// TODO: objet user
-              $_SESSION['admin'] = $userinfo['Admin'];
-              $_SESSION['mail'] = $userinfo['Email'];
-
-              //remplachement du header("Location: index.php); par du js a cause d'une erreur
-              echo '<script> document.location.replace("accueil.php"); </script>';
-            } else {
-              $erreur = "<br />Mauvais email ou mot de passe.";
-            }
-          } else {
-            $erreur = "<br />Tous les champs doivent être complétés.";
-          }
-        }
-        ?>
         <h2 class="sr-only">Formulaire de connexion</h2>
         <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
         <div class="form-group">
           <input type="text" name="adminconnect" placeholder="Login" class="form-control" />
         </div>
         <div class="form-group"><input class="form-control" type="password" name="mdpconnect" placeholder="Password"></div>
-        <div class="form-group"><button class="btn btn-primary btn-block" type="submit" name="formconnexion">Connexion</button>
-        </div>
+        <div class="form-group"><button class="btn btn-primary btn-block" type="submit" name="formconnexion">Connexion</button></div>
+        <p><?php if(isset($erreur)) echo $erreur; ?></p>
       </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
