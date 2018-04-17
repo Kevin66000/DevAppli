@@ -1,5 +1,7 @@
 <?php
 require 'include.php';
+var_dump($_SESSION['user']);
+echo $_SESSION['user']->GetPseudo();
 ?>
 <div>
   <nav class="navbar navbar-light navbar-expand-md">
@@ -29,7 +31,7 @@ require 'include.php';
               <a class="dropdown-item" role="presentation" href="/role.php">Role</a>
             </div>
           </li>
-          <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Mon compte</a>
+          <li class="dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Mon compte <?php //echo $user->GetPseudo(); ?></a>
             <div class="dropdown-menu" role="menu">
               <a class="dropdown-item" role="presentation" href="/profil.php">Profils</a>
               <a class="dropdown-item" role="presentation" href="/php/deconnexion.php">Deconnexion</a>

@@ -29,7 +29,18 @@ class User{
   private $role;
 
   //methodes
-  function __construct($pId, $pPseudo, $pNom, $pPrenom, $pEmail, $pTel, $pTel2, $pTelMobile, $pMatricule){
+  function __construct(){
+    $this->iduser = '';
+    $this->pseudo = '';
+    $this->nom = '';
+    $this->prenom = '';
+    $this->email = '';
+    $this->tel = '';
+    $this->tel2 = '';
+    $this->telMobile = '';
+    $this->matricule = '';
+  }
+  public function SurchargeBuilder($pId, $pPseudo, $pNom, $pPrenom, $pEmail, $pTel, $pTel2, $pTelMobile, $pMatricule){
     $this->iduser = $pId;
     $this->pseudo = $pPseudo;
     $this->nom = $pNom;

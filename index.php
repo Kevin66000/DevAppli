@@ -10,12 +10,18 @@ if(isset($_POST['formconnexion'])) {
       $userinfo = $requser->fetch();
       if ($userinfo['actifUtilisateur']) {
         //instensiation de l'objet utilisateur
-        $unutilisateur = new User($userinfo['idUtilisateur'], $userinfo['nomAfficher'], $userinfo['nomUtilisateur'], $userinfo['prenomUtilisateur'], $userinfo['emailUtilisateur'], $userinfo['telUtilisateur'], $userinfo['tel2Utilisateur'], $userinfo['telMobileUtilisateur'], $userinfo['matriculeUtilisateur']);
+        $unutilisateur = new User;
+        $unutilisateur->SurchargeBuilder($userinfo['idUtilisateur'], $userinfo['nomAfficher'], $userinfo['nomUtilisateur'], $userinfo['prenomUtilisateur'], $userinfo['emailUtilisateur'], $userinfo['telUtilisateur'], $userinfo['tel2Utilisateur'], $userinfo['telMobileUtilisateur'], $userinfo['matriculeUtilisateur']);
+
+        $reqrole = $bdd->prepare("SELECT * FROM droit WHERE role = ? AND mdpUtilisateur = ?");
+
 
         echo $unutilisateur->GetPseudo();
         var_dump($unutilisateur);
         $unrole = new role('test', array('test', 'test'));
         var_dump($unrole);
+        $unutilisateur->SetRole($unrole);
+        $_SESSION['user'] = $unutilisateur;
         //header("Location: accueil.php");
         //echo '<script> document.location.replace("accueil.php"); </script>';
       }else {
