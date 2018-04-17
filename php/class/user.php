@@ -1,7 +1,6 @@
 <?php
-//l'objet est stoquer dans une sassion
+/*l'objet est stoquer dans une sassion
 
-/*
 user->role->getpermition('libelle')
 
 if (user->rolegetpermission('supprimernote') == true) {
@@ -29,18 +28,7 @@ class User{
   private $role;
 
   //methodes
-  function __construct(){
-    $this->iduser = '';
-    $this->pseudo = '';
-    $this->nom = '';
-    $this->prenom = '';
-    $this->email = '';
-    $this->tel = '';
-    $this->tel2 = '';
-    $this->telMobile = '';
-    $this->matricule = '';
-  }
-  public function SurchargeBuilder($pId, $pPseudo, $pNom, $pPrenom, $pEmail, $pTel, $pTel2, $pTelMobile, $pMatricule){
+  function __construct($pId, $pPseudo, $pNom, $pPrenom, $pEmail, $pTel, $pTel2, $pTelMobile, $pMatricule){
     $this->iduser = $pId;
     $this->pseudo = $pPseudo;
     $this->nom = $pNom;
@@ -116,7 +104,7 @@ class User{
     return $this->matricule;
   }
 
-  public function SetRole(&$pRole){
+  public function SetRole($pRole){
     $this->role = $pRole;
   }
 

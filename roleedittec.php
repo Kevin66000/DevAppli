@@ -1,6 +1,6 @@
 <?php
 require 'php/setting.bdd.php';
-require 'php/functionrole.php';
+
 //selectionne les toutes les permissions
 $reqSelectPermissions = $bdd->prepare("SELECT * FROM permission");
 $reqSelectPermissions->execute();

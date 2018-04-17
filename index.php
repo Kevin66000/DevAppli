@@ -3,32 +3,21 @@ if(isset($_POST['formconnexion'])) {
   $adminconnect = htmlspecialchars($_POST['adminconnect']);// REVIEW: (adminconnect = emailUtilisateur ) : l'identifien de l'utilisateur
   $mdpconnect = sha1($_POST['mdpconnect']);
   if(!empty($adminconnect) AND !empty($_POST['mdpconnect'])) {
-    $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE emailUtilisateur = ? AND mdpUtilisateur = ?");
+    $requser = $bdd->prepare("SELECT idUtilisateur, actifUtilisateur FROM utilisateur WHERE emailUtilisateur = ? AND mdpUtilisateur = ?");
     $requser->execute(array($adminconnect, $mdpconnect));
     $userexist = $requser->rowCount();
     if($userexist == 1) {
       $userinfo = $requser->fetch();
       if ($userinfo['actifUtilisateur']) {
-        //instensiation de l'objet utilisateur
-        $unutilisateur = new User;
-        $unutilisateur->SurchargeBuilder($userinfo['idUtilisateur'], $userinfo['nomAfficher'], $userinfo['nomUtilisateur'], $userinfo['prenomUtilisateur'], $userinfo['emailUtilisateur'], $userinfo['telUtilisateur'], $userinfo['tel2Utilisateur'], $userinfo['telMobileUtilisateur'], $userinfo['matriculeUtilisateur']);
+        $_SESSION['idUser'] = $userinfo['idUtilisateur'];// ajoute l'id de l'utilisateur dans la session
 
-        $reqrole = $bdd->prepare("SELECT * FROM droit WHERE role = ? AND mdpUtilisateur = ?");
-
-
-        echo $unutilisateur->GetPseudo();
-        var_dump($unutilisateur);
-        $unrole = new role('test', array('test', 'test'));
-        var_dump($unrole);
-        $unutilisateur->SetRole($unrole);
-        $_SESSION['user'] = $unutilisateur;
-        //header("Location: accueil.php");
+        header("Location: accueil.php");//redirige ver la pages d'accueil
         //echo '<script> document.location.replace("accueil.php"); </script>';
       }else {
         $erreur = "<br />Ce compte est désactiver.";
       }
     } else {
-      $erreur = "<br />Mauvais email ou mot de passe.".$mdpconnect;
+      $erreur = "<br />Mauvais email ou mot de passe.";
     }
   } else {
     $erreur = "<br />Tous les champs doivent être complétés.";
