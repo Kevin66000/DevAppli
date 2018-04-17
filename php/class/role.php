@@ -9,16 +9,20 @@ class role{
 
   //methode
   public function __construct($pLblbRole, $pPermissions){
-    $this->$libellerole = $pLblbRole;
-    $this->$permissions = $pPermissions;
+    $this->libellerole = $pLblbRole;
+    $this->permissions = $pPermissions;
   }
 
   public function GetRole(){
-    return $this->$libellerole
+    return $this->libellerole;
   }
 
-  public function GetPermission($pPermission){
-    return $this->$permissions[$pPermission];
+  public function GetPermission(){
+    return $this->permissions;
+  }
+
+  public function SetPermission($pPermition){
+    $this->permissions = $pPermition;
   }
 }
 

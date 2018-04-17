@@ -3,7 +3,7 @@ if(isset($_POST['formconnexion'])) {
   $adminconnect = htmlspecialchars($_POST['adminconnect']);// REVIEW: (adminconnect = emailUtilisateur ) : l'identifien de l'utilisateur
   $mdpconnect = sha1($_POST['mdpconnect']);
   if(!empty($adminconnect) AND !empty($_POST['mdpconnect'])) {
-    $requser = $bdd->prepare("SELECT * FROM utilisateur WHER E emailUtilisateur = ? AND mdpUtilisateur = ?");
+    $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE emailUtilisateur = ? AND mdpUtilisateur = ?");
     $requser->execute(array($adminconnect, $mdpconnect));
     $userexist = $requser->rowCount();
     if($userexist == 1) {
@@ -14,14 +14,15 @@ if(isset($_POST['formconnexion'])) {
 
         echo $unutilisateur->GetPseudo();
         var_dump($unutilisateur);
-
+        $unrole = new role('test', array('test', 'test'));
+        var_dump($unrole);
         //header("Location: accueil.php");
         //echo '<script> document.location.replace("accueil.php"); </script>';
       }else {
         $erreur = "<br />Ce compte est désactiver.";
       }
     } else {
-      $erreur = "<br />Mauvais email ou mot de passe.";
+      $erreur = "<br />Mauvais email ou mot de passe.".$mdpconnect;
     }
   } else {
     $erreur = "<br />Tous les champs doivent être complétés.";
@@ -55,3 +56,6 @@ if(isset($_POST['formconnexion'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
+<?php
+
+?>
