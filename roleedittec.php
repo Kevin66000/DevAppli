@@ -1,5 +1,6 @@
 <?php
-require 'php/setting.bdd.php';
+require 'php/include.php';
+
 
 //selectionne les toutes les permissions
 $reqSelectPermissions = $bdd->prepare("SELECT * FROM permission");
