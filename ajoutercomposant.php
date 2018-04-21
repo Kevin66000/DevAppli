@@ -75,7 +75,21 @@
                   <div class="form-group"><label for="calltime">Statut</label><select class="form-control" name="Call Time" required="" id="calltime"><option value="">Statut</option><option value="">Active</option><option value="">En cours</option><option value="">...</option></select></div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group"><label for="calltime">Salle</label><select class="form-control" name="Call Time" required="" id="calltime"><option value="">Lieu</option><option value="">111i</option><option value="">110i</option><option value="">109i</option></select></div>
+                  <div class="form-group">
+                    <label for="calltime">Salle</label>
+                    <select class="form-control" name="Call Time" required="" id="calltime">
+                      <option value="">Lieu</option>
+                      <?php
+                      //charge les categories
+                      $reqsalle = $bdd->prepare("SELECT * FROM salle");
+                      $reqsalle->execute();
+                      $salleinfo = $reqsalle->fetchAll();
+                      foreach ($salleinfo as $row) {
+                        echo '<option value="'.$row["idSalle"].'">'.$row["libelleSalle"].'</option>';
+                      }
+                      ?>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="form-group has-feedback"><label for="from_name">Type</label><input class="form-control" type="text" name="type" required="" id="from_name" tabindex="-1"></div>
