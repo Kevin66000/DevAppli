@@ -22,11 +22,10 @@
 
     //si le button ajouter un role est activer
     if (isset($_POST['submitaddrole'])) {
-      if (!empty($_POST['nomRole'])) {//test si un nom a êtait donner au role
+      if (!empty($_POST['nomRole']) && strlen($_POST['nomRole']) <= 42) {//test si un nom a êtait donner au role et que le role fait moin de 42 character
         //variable
         $nomRole = htmlspecialchars($_POST['nomRole']);
         $pe = !empty($_POST['pe'])? $_POST['pe'] : [];
-
 
         if (nomRoleExiste($nomRole)) {
           $bdd->prepare("INSERT INTO role(libellerRole) VALUES(?)")->execute(array($nomRole));//ajoute un role
@@ -52,7 +51,6 @@
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-
             </div>
           </div>
           <?php
@@ -60,7 +58,7 @@
       }else {
         ?>
         <div class="container">
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">Donner un nom au role!
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">Donner un nom de mois de 42 charcter au role!
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -125,7 +123,6 @@
                 ?>
               </div>
             </div>
-
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
               <button type="submit" class="btn btn-success" name="submitaddrole">Valider</button>
@@ -134,7 +131,6 @@
         </div>
       </div>
     </div>
-
     <div>
       <div class="container">
         <div class="row">
@@ -228,11 +224,11 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/jquery.minPTU.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.minPTU.js"></script>
     <script src="/assets/js/bs-animationPTU.js"></script>
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/js/role.js"></script>
   </body>
 </html>

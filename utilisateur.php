@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/assets/css/stylesPTU.css">
     <link rel="stylesheet" href="/assets/css/stylesAccueil.min.css">
   </head>
-
   <body>
     <?php include 'php/nav.php';
 
@@ -55,19 +54,64 @@
                   <tbody>
                     <?php
                     foreach ($users as $user) {
-                      ?><tr style="font-size:12px;"><?php
-                        echo "<td>".$user['idUtilisateur']."</td>";
-                        echo "<td>".$user['nomAfficher']."</td>";
-                        echo "<td>".$user['nomUtilisateur']."</td>";
-                        echo "<td>".$user['prenomUtilisateur']."</td>";
-                        echo "<td>".$user['emailUtilisateur']."</td>";
-                        echo "<td>".$user['telUtilisateur']."</td>";
-                        echo "<td>".$user['tel2Utilisateur']."</td>";
-                        echo "<td>".$user['telMobileUtilisateur']."</td>";
-                        echo "<td>".$user['matriculeUtilisateur']."</td>";
-                        echo "<td>".$user['actifUtilisateur']."</td>";
-                        echo "<td>".$user['idRole']."</td>";
-                        ?>
+                      ?>
+                      <tr style="font-size:12px;">
+                        <td id="user<?php echo $user["idUtilisateur"]; ?>">
+                          <span><?php  echo $user["idUtilisateur"]; ?></span>
+                        </td>
+                        <td>
+                          <span><?php echo $user['nomAfficher']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['nomAfficher']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['nomUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['nomUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['prenomUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['prenomUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['emailUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['emailUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['telUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['telUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['tel2Utilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['tel2Utilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['telMobileUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['telMobileUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['matriculeUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['matriculeUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['actifUtilisateur']?></span>
+                          <input type="text" name="modifipseudo" value="<?php echo $user['actifUtilisateur']?>">
+                        </td>
+                        <td>
+                          <span><?php echo $user['idRole']?></span>
+                          <select class="form-control" name="idrole" required="">
+                            <?php
+                            //charge les roles
+                            $reqsalle = $bdd->prepare("SELECT * FROM role");
+                            $reqsalle->execute();
+                            foreach ($reqsalle->fetchAll() as $row) {
+                              if ($row["idRole"] == $user['idRole']) {
+                                echo '<option value="'.$row["idRole"].'" selected>'.$row["libellerRole"].'</option>';
+                              }else {
+                                echo '<option value="'.$row["idRole"].'">'.$row["libellerRole"].'</option>';
+                              }
+                            }
+                            ?>
+                          </select>
+                        </td>
                         <td style="width:110px;">
                           <button class="btn btn-primary float-left" type="button" onclick="document.location.href = 'parc/ajouterParcCompo.php'" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
                           <button class="btn btn-danger float-right" type="button" name="delproduit" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>

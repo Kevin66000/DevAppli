@@ -12,7 +12,6 @@ if(isset($_POST['formconnexion'])) {
         $_SESSION['idUser'] = $userinfo['idUtilisateur'];// ajoute l'id de l'utilisateur dans la session
 
         header("Location: accueil.php");//redirige ver la pages d'accueil
-        //echo '<script> document.location.replace("accueil.php"); </script>';
       }else {
         $erreur = "<br />Ce compte est désactiver.";
       }
