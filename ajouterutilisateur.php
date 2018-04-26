@@ -28,7 +28,7 @@ if (isset($_POST['submitadduser'])) {
                 $reqemail->execute(array($email));
                 if ($reqemail->rowCount() == 0) {
                   $insertmbr = $bdd->prepare("INSERT INTO `utilisateur`(`nomUtilisateur`, `prenomUtilisateur`, `nomAfficher`, `mdpUtilisateur`, `actifUtilisateur`, `telUtilisateur`, `telMobileUtilisateur`, `matriculeUtilisateur`, `emailUtilisateur`, `idRole`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-                  $insertmbr->execute(array($lastname, $firstname, $pseudo, $password, 1, $telfixe, $telmobile, $matricule, $email, $idrole));
+                  $insertmbr->execute(array($lastname, $firstname, $pseudo, sha1($password), 1, $telfixe, $telmobile, $matricule, $email, $idrole));
                   header("Location: utilisateur.php");
                 } else {
                   $error = "L'adresse email est déjà utiliser.";
@@ -118,9 +118,9 @@ if (isset($_POST['submitadduser'])) {
                   <option value="">Roles</option>
                   <?php
                   //charge les role
-                  $reqsalle = $bdd->prepare("SELECT * FROM role");
-                  $reqsalle->execute();
-                  foreach ($reqsalle->fetchAll(); as $row) {
+                  $reqrole = $bdd->prepare("SELECT * FROM role");
+                  $reqrole->execute();
+                  foreach ($reqrole->fetchAll() as $row) {
                     if ($row["idRole"] == $idrole) {
                       echo '<option value="'.$row["idRole"].'" selected>'.$row["libellerRole"].'</option>';
                     }else {
