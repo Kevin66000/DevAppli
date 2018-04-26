@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Utilisateurs</title>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.minPTU.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/fonts/font-awesome.minPTU.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/Navigation-e-commercePTU.css">
     <link rel="stylesheet" href="/assets/css/Navigation-with-SearchPTU.css">
-    <link rel="stylesheet" href="/assets/css/stylesPTU.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/stylesAccueil.min.css">
   </head>
   <body>
@@ -213,11 +210,10 @@
         </div>
       </div>
     </div>
-    <script src="/assets/js/jquery.minPTU.js"></script>
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.minPTU.js"></script>
-    <script src="/assets/js/bs-animationPTU.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/BSanimation.js"></script>
     <script src="/assets/js/user.js"></script>
   </body>
 </html>

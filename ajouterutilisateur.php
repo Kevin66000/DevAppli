@@ -75,11 +75,14 @@ if (isset($_POST['submitadduser'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajouterUtilisateur</title>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.minAjC.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/fonts/font-awesome.minAjC.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/ss-contactAjC.css">
-    <link rel="stylesheet" href="/assets/css/stylesAjC.css">
+    <style>
+    * {
+      font-family:'Raleway', sans-serif;
+    }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -163,8 +166,8 @@ if (isset($_POST['submitadduser'])) {
         </div>
       </form>
     </div>
-    <script src="/assets/js/jquery.minAjC.js"></script>
-    <script src="/assets/bootstrap/js/bootstrap.minAjC.js"></script>
-    <script src="/assets/js/bs-animationAjC.js"></script>
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/js/BSanimation.js"></script>
   </body>
-  </html>
+</html>
