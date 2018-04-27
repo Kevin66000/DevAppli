@@ -5,8 +5,11 @@
   RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
   RewriteRule ^(.+)\.php$ http://%{HTTP_HOST}/$1 [R=301,L]
 
-  # permet de mettre le nom de la page sans le .php
   RewriteRule ^([^/.]+)$ $1.php [L]
+  
+  # permet de mettre le nom de la page sans le .php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
 
 </IfModule>
