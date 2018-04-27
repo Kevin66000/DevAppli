@@ -8,7 +8,17 @@
   </head>
 
   <body>
-    <?php include 'php/nav.php'; ?>
+    <?php include 'php/nav.php';
+    //test si l'utilisateur est connecter
+    if (isset($_SESSION['idUser'])) {
+      ?>
+
+
+      <?php
+    }else {
+      header("Location: /");//redirige ver la pages d'accueil
+    }
+    ?>
     <script src="/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
   </body>
