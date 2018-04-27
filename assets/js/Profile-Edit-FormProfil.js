@@ -16,7 +16,7 @@ $(function(){
     }
   }
 
-  function toggleAlert(clasz, display){
+  function toggleAlert(clasz, display, text){
     $(".alert")
     .removeClass("display")
     .removeClass("alert-info")
@@ -27,9 +27,9 @@ $(function(){
       $(".alert").addClass("display")
     }
     if(clasz === "alert-success"){
-      $(".alert > span").text('Profile saved');
+      $(".alert > span").text(text);
     }else if(clasz === "alert-danger"){
-      $(".alert > span").text('Profile reset');
+      $(".alert > span").text(text);
     }
   }
 
@@ -42,7 +42,6 @@ $(function(){
     var formData = new FormData($(this)[0]);
 
     $(inst).find("button[type = submit]").addClass("loading").prop("disabled", true);
-    toggleAlert("alert-success", true);
 
     $.ajax({
       url: "/php/editprofil.php",
@@ -52,17 +51,17 @@ $(function(){
       contentType: false,
       processData: false,
       success: function (result) {
-        console.log(result);
+        toggleAlert("alert-success", true, result);
       },
       error: function (error) {
-        console.log("erreur : "+error);
+        console.log("erreur : "+error.responseText);
       }
     })
 
     setTimeout(function(){
       $(inst).find("button[type = submit]").removeClass("loading").prop("disabled", false);
       toggleAlert("alert-success");
-    },1000);
+    },4000);
 
     return false;
   });
@@ -72,7 +71,7 @@ $(function(){
     var formData = new FormData($(this)[0]);
 
     $(inst).find("button[type = reset]").addClass("loading").prop("disabled", true);
-    toggleAlert("alert-danger",true);
+    toggleAlert("alert-danger",true, 'Modification annuler');
 
     setTimeout(function(){
       $(inst).find("button[type = reset]").removeClass("loading").prop("disabled", false);

@@ -15,20 +15,25 @@
       $requser = $bdd->prepare("SELECT * FROM utilisateur WHERE idUtilisateur = ?");
       $requser->execute(array($_SESSION['idUser']));
       $userinfo = $requser->fetch();
+
+      $imageurl = 'assets/img/imagesupload/'.$userinfo['avatar'];
+      $image = 'data: '.mime_content_type($imageurl).';base64,'.base64_encode(file_get_contents($imageurl));
       ?>
       <div class="container profile profile-view" id="profile">
         <div class="row">
           <div class="col-md-12 alert-col relative">
             <div class="alert alert-info absolue center" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <span>Profile save with success</span>
+              <span>message du profil</span>
             </div>
           </div>
         </div>
         <form method="post">
           <div class="form-row profile-row">
             <div class="col-md-4 relative">
-              <div class="avatar"><div class="avatar-bg center"></div></div>
+              <div class="avatar">
+                <div class="avatar-bg center" style="background: url('<?php echo $image ?>') 50% 50% / cover;"></div>
+            </div>
               <input type="file" name="avatar-file" class="form-control">
             </div>
             <div class="col-md-8">
