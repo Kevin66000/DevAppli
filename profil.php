@@ -25,45 +25,45 @@
             </div>
           </div>
         </div>
-        <form>
+        <form method="post">
           <div class="form-row profile-row">
             <div class="col-md-4 relative">
               <div class="avatar"><div class="avatar-bg center"></div></div>
               <input type="file" name="avatar-file" class="form-control">
             </div>
             <div class="col-md-8">
-              <h1>Profile - (<?php echo $userinfo['nomAfficher']; ?>)</h1>
+              <h1>Profile - <?php echo $userinfo['nomAfficher']; ?> - <?php echo $userinfo['matriculeUtilisateur']; ?></h1>
               <hr>
               <div class="form-row">
                 <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Nom</label><input class="form-control" type="text" name="firstname"></div>
+                  <div class="form-group"><label>Nom</label><input class="form-control" type="text" name="firstname" value="<?php echo $userinfo['prenomUtilisateur']; ?>"></div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Prenom</label><input class="form-control" type="text" name="lastname"></div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Telephone - Fixe</label><input class="form-control" type="text" name="tel"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Telephone - Mobile</label><input class="form-control" type="text" name="telm"></div>
+                  <div class="form-group"><label>Prenom</label><input class="form-control" type="text" name="lastname" value="<?php echo $userinfo['nomUtilisateur']; ?>"></div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Adresse email</label><input class="form-control" type="email" name="email" autocomplete="off" required=""></div>
+                  <div class="form-group"><label>Telephone - Fixe</label><input class="form-control" type="text" name="tel" value="<?php echo $userinfo['telUtilisateur']; ?>"></div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Telephone - secondaire</label><input class="form-control" type="text" name="tel2"></div>
+                  <div class="form-group"><label>Telephone - Mobile</label><input class="form-control" type="text" name="telm" value="<?php echo $userinfo['telMobileUtilisateur']; ?>"></div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Mots de passe </label><input class="form-control" type="password" name="password" autocomplete="off" required=""></div>
+                  <div class="form-group"><label>Adresse email</label><input class="form-control" type="email" name="email" value="<?php echo $userinfo['emailUtilisateur']; ?>" autocomplete="off" required=""></div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                  <div class="form-group"><label>Confirmation du mots de passe</label><input class="form-control" type="password" name="confirmpass" autocomplete="off" required=""></div>
+                  <div class="form-group"><label>Telephone - secondaire</label><input class="form-control" type="text" name="tel2" value="<?php echo $userinfo['tel2Utilisateur']; ?>"></div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group"><label>Mots de passe</label><input class="form-control" type="password" name="password" autocomplete="off"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group"><label>Confirmation du mots de passe</label><input class="form-control" type="password" name="confirmpass" autocomplete="off"></div>
                 </div>
               </div>
               <hr>
