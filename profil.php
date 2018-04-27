@@ -16,8 +16,13 @@
       $requser->execute(array($_SESSION['idUser']));
       $userinfo = $requser->fetch();
 
-      $imageurl = 'assets/img/imagesupload/'.$userinfo['avatar'];
-      $image = 'data: '.mime_content_type($imageurl).';base64,'.base64_encode(file_get_contents($imageurl));
+      if ($userinfo['avatar'] != null) {
+        $imageurl = 'assets/img/imagesupload/'.$userinfo['avatar'];
+        $image = 'data: '.mime_content_type($imageurl).';base64,'.base64_encode(file_get_contents($imageurl));
+        $styleavatar = 'style="background: url(\''.$image.'\') 50% 50% / cover;";';
+      }else {
+        $styleavatar = null;
+      }
       ?>
       <div class="container profile profile-view" id="profile">
         <div class="row">
@@ -32,7 +37,7 @@
           <div class="form-row profile-row">
             <div class="col-md-4 relative">
               <div class="avatar">
-                <div class="avatar-bg center" style="background: url('<?php echo $image ?>') 50% 50% / cover;"></div>
+                <div class="avatar-bg center" <?php echo $styleavatar ?>></div>
             </div>
               <input type="file" name="avatar-file" class="form-control">
             </div>
