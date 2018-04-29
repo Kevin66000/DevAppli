@@ -79,7 +79,6 @@
                     <?php
                   }
                   ?>
-                  <li class="list-group-item"><?php echo 'nomComposants | typeComposants' ?></li>
                 </ul>
               </div>
             </fieldset>
