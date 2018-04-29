@@ -27,7 +27,7 @@
           <div class="col-12 col-md-6 border border-dark">
             <fieldset>
               <legend>salle i109</legend>
-              <div class="container">
+              <div class="col-12 col-md">
                 <h2>Les machines</h2>
                 <ul class="list-group" style="overflow:auto; height: 500px;" >
                   <?php
@@ -67,7 +67,7 @@
           <div class="col-12 col-md-6 border border-dark">
             <fieldset>
               <legend>salle i111</legend>
-              <div class="container">
+              <div class="col-12 col-md">
                 <h2>Les machines</h2>
                 <ul class="list-group" style="overflow:auto; height: 500px;" >
                   <?php
@@ -79,6 +79,7 @@
                     <?php
                   }
                   ?>
+                  <li class="list-group-item"><?php echo 'nomComposants | typeComposants' ?></li>
                 </ul>
               </div>
             </fieldset>
