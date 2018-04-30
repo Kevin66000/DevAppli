@@ -108,7 +108,7 @@
                           <button class="btn btn-primary" type="button" data-compoid="compo<?php echo $composant['idComposants']; ?>" onclick="startcompoedit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
 
                           <button type="submit" class="btn btn-success" style="display:none" name="submitedituser">✓</button>
-                          <button type="button" class="btn btn-danger" style="display:none" data-compoid="compo<?php echo $composant['idUtilisateur'] ?>" onclick="cancelcompoedit(this)">✗</button>
+                          <button type="button" class="btn btn-danger" style="display:none" data-compoid="compo<?php echo $composant['idComposants'] ?>" onclick="cancelcompoedit(this)">✗</button>
                           <form method="post">
                             <input type="hidden" name="valueiduser" value="<?php echo $composant['idComposants']; ?>">
                             <button class="btn btn-danger" type="submit" name="submitrmuser" onclick="return confirm('confirmer la suppression du composant);" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
