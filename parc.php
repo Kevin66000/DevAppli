@@ -12,7 +12,7 @@
     //test si l'utilisateur est connecter
     if (isset($_SESSION['idUser'])) {
       ?>
-      <div class="container">
+      <div class="container mb-5">
         <div class="row">
           <div class="col-12 col-md-6 border border-dark">
             <fieldset>
@@ -26,13 +26,13 @@
           </div>
           <div class="col-12 col-md-6 border border-dark">
             <fieldset>
-              <legend>salle i109</legend>
+              <legend>salle i111</legend>
               <div class="col-12 col-md">
                 <h2>Les machines</h2>
                 <ul class="list-group" style="overflow:auto; height: 500px;" >
                   <?php
                   $reqcompoparc = $bdd->prepare("SELECT parcComposants.nomComposants, parcComposants.typeComposants FROM parcComposants, salle WHERE parcComposants.idSalle = salle.idSalle AND salle.libelleSalle = ?");
-                  $reqcompoparc->execute(array("i109"));
+                  $reqcompoparc->execute(array("i111"));
                   foreach ($reqcompoparc->fetchAll() as $row) {
                     ?>
                     <li class="list-group-item"><?php echo $row['nomComposants']." | ".$row['typeComposants'] ?></li>
