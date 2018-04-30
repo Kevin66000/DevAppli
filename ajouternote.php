@@ -22,16 +22,10 @@
         //variable
         $ternairError = true;
 
-        $nomCompo = !empty($_POST['nomCompo']) ? htmlspecialchars($_POST['nomCompo']) : $ternairError = false;
-        $lieu = htmlspecialchars($_POST['lieu']) ? intval(htmlspecialchars($_POST['lieu'])) : $ternairError = false;
+        $nomCompo = !empty($_POST['titreNote']) ? htmlspecialchars($_POST['titreNote']) : $ternairError = false;
         $statut = htmlspecialchars($_POST['statut']) ? intval(htmlspecialchars($_POST['statut'])) : $ternairError = false;
-        $gabarit = htmlspecialchars($_POST['gabarit']) ? htmlspecialchars($_POST['gabarit']) : $ternairError = false;
-        $type = htmlspecialchars($_POST['type']) ? htmlspecialchars($_POST['type']) : $ternairError = false;
-        $fabricant = htmlspecialchars($_POST['fabricant']) ? htmlspecialchars($_POST['fabricant']) : $ternairError = false;
-        $modele = htmlspecialchars($_POST['modele']) ? htmlspecialchars($_POST['modele']) : $ternairError = false;
-        $numSerie = htmlspecialchars($_POST['numSerie']) ? htmlspecialchars($_POST['numSerie']) : $ternairError = false;
-        $addrMac = htmlspecialchars($_POST['addreMac']) ? htmlspecialchars($_POST['addreMac']) : $ternairError = false;
-        $referenceCompo = htmlspecialchars($_POST['referenceCompo']) ? htmlspecialchars($_POST['referenceCompo']) : $ternairError = false;
+        $gabarit = htmlspecialchars($_POST['dateDebut']) ? htmlspecialchars($_POST['dateFin']) : $ternairError = false;
+        $type = htmlspecialchars($_POST['descriptionNote']) ? htmlspecialchars($_POST['descriptionNote']) : $ternairError = false;
 
         //test si les champs ne son pas vide
         if ($ternairError) {

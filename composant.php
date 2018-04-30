@@ -54,24 +54,87 @@
                       <th>Adresse MAC</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr style="font-size:12px;">
-                      <td><strong>Cell 1</strong></td>
-                      <td>Cell 2</td>
-                      <td>Cell 3</td>
-                      <td>Cell 4</td>
-                      <td>Cell 5</td>
-                      <td>Cell 6</td>
-                      <td>Cell 7</td>
-                      <td>Cell 8</td>
-                      <td>Cell 9</td>
-                      <td>Cell 10</td>
-                      <td style="max-width:98px;">
-                        <button class="btn btn-primary float-left" type="button" onclick="document.location.href = 'parc/ajouterParcCompo.php'" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
-                        <button class="btn btn-primary float-right" type="button" name="delproduit" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
-                      </td>
+                  <?php
+                  $sql = "SELECT * FROM composant";
+                  $reqproduit = $bdd->prepare($sql);
+                  $reqproduit->execute();
+                  $dbrep = $reqproduit->fetchAll();
+                  foreach ($dbrep as $row) {
+                    ?>
+                    <tbody>
+                      <tr style="font-size:12px;">
+                        <form method="post">
+                          <td id="composant <?php echo $composant["idComposants"] ?>">
+                            <span><?php  echo $composant["idComposants"]; ?></span>
+                        </td>
+                        <td>
+                          <span><?php echo $comosant['nomComposants']?></span>
+                          <input type="text" class="form-control" name="modifinom" value="<?php echo $composant['nomComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['referenceComposants']?></span>
+                          <input type="text" class="form-control" name="modifinom" value="<?php echo $composant['referenceComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['idSalle']?></span>
+                          <input type="text" class="form-control" name="modifilieu" value="<?php echo $composant['idSalle']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['statutComposants']?></span>
+                          <input type="text" class="form-control" name="modifistatut" value="<?php echo $composant['statutComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['gabaritComposants']?></span>
+                          <input type="text" class="form-control" name="modifigabarit" value="<?php echo $composant['gabaritComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['typeComposants']?></span>
+                          <input type="text" class="form-control" name="modifitype" value="<?php echo $composant['typeComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['fabricantComposants']?></span>
+                          <input type="text" class="form-control" name="modififabricant" value="<?php echo $composant['fabricantComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['modeleComposants']?></span>
+                          <input type="text" class="form-control" name="modifimodele" value="<?php echo $composant['modeleComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['numSerieComposants']?></span>
+                          <input type="text" class="form-control" name="modifinumSerie" value="<?php echo $composant['numSerieComposants']?>" style="display:none;">
+                        </td>
+                        <td>
+                          <span><?php echo $composant['addressMacComposants']?></span>
+                          <input type="text" class="form-control" name="modifiaddreMAc" value="<?php echo $composant['addressMacComposants']?>" style="display:none;">
+                        </td>
+                          <?php
+                          if ($user['actifUtilisateur'] == 1) {
+                            ?>
+                            <input type="checkbox" class="form-control" name="modifiactif[]" value="cocher" checked disabled>
+                            <?php
+                          }else {
+                            ?>
+                            <input type="checkbox" class="form-control" name="modifiactif[]" value="cocher" disabled>
+                            <?php
+                          }?>
+                        </td>
+                        <td style="width: 150px; display: inline-block;">
+                          <input type="hidden" name="valueiduser" value="<?php echo $user['idUtilisateur']; ?>">
+                          <button class="btn btn-primary" type="button" data-userid="user<?php echo $user['idUtilisateur']; ?>" onclick="startuseredit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
+
+                          <button type="submit" class="btn btn-success" style="display:none" name="submitedituser">✓</button>
+                          <button type="button" class="btn btn-danger" style="display:none" data-userid="user<?php echo $user['idUtilisateur'] ?>" onclick="canceluseredit(this)">✗</button>
+                          <form method="post">
+                            <input type="hidden" name="valueiduser" value="<?php echo $user['idUtilisateur']; ?>">
+                            <button class="btn btn-danger" type="submit" name="submitrmuser" onclick="return confirm('confirmer la suppression de l\'utilisateur');" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
+                          </form>
+                        </td>
+                      </form>
                     </tr>
-                  </tbody>
+                    <?php
+                  }
+                  ?>
+                    </tbody>
                 </table>
               </div>
             </div>
