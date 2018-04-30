@@ -32,7 +32,7 @@
                 <ul class="list-group" style="overflow:auto; height: 500px;" >
                   <?php
                   $reqcompoparc = $bdd->prepare("SELECT parcComposants.nomComposants, parcComposants.typeComposants FROM parcComposants, salle WHERE parcComposants.idSalle = salle.idSalle AND salle.libelleSalle = ?");
-                  $reqcompoparc->execute(array("i111"));
+                  $reqcompoparc->execute(array("111i"));
                   foreach ($reqcompoparc->fetchAll() as $row) {
                     ?>
                     <li class="list-group-item"><?php echo $row['nomComposants']." | ".$row['typeComposants'] ?></li>
@@ -53,7 +53,7 @@
                 <ul class="list-group" style="overflow:auto; height: 500px;" >
                   <?php
                   $reqcompoparc = $bdd->prepare("SELECT parcComposants.nomComposants, parcComposants.typeComposants FROM parcComposants, salle WHERE parcComposants.idSalle = salle.idSalle AND salle.libelleSalle = ?");
-                  $reqcompoparc->execute(array("i110"));
+                  $reqcompoparc->execute(array("110i"));
                   foreach ($reqcompoparc->fetchAll() as $row) {
                     ?>
                     <li class="list-group-item"><?php echo $row['nomComposants']." | ".$row['typeComposants'] ?></li>
@@ -72,7 +72,7 @@
                 <ul class="list-group" style="overflow:auto; height: 500px;" >
                   <?php
                   $reqcompoparc = $bdd->prepare("SELECT parcComposants.nomComposants, parcComposants.typeComposants FROM parcComposants, salle WHERE parcComposants.idSalle = salle.idSalle AND salle.libelleSalle = ?");
-                  $reqcompoparc->execute(array("i111"));
+                  $reqcompoparc->execute(array("111i"));
                   foreach ($reqcompoparc->fetchAll() as $row) {
                     ?>
                     <li class="list-group-item"><?php echo $row['nomComposants']." | ".$row['typeComposants'] ?></li>
