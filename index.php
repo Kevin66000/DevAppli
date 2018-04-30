@@ -12,7 +12,6 @@ if(isset($_POST['formconnexion'])) {
         $_SESSION['idUser'] = $userinfo['idUtilisateur'];// ajoute l'id de l'utilisateur dans la session
 
         header("Location: accueil.php");//redirige ver la pages d'accueil
-        //echo '<script> document.location.replace("accueil.php"); </script>';
       }else {
         $erreur = "<br />Ce compte est désactiver.";
       }
@@ -23,6 +22,11 @@ if(isset($_POST['formconnexion'])) {
     $erreur = "<br />Tous les champs doivent être complétés.";
   }
 }
+
+//test si l'utilisateur est connecter
+if (isset($_SESSION['idUser'])) {
+  header("Location: accueil.php");//redirige ver la pages d'accueil
+}else {
 ?>
 <!DOCTYPE html>
 <html style="height: 100%;">
@@ -40,9 +44,9 @@ if(isset($_POST['formconnexion'])) {
         <h2 class="sr-only">Formulaire de connexion</h2>
         <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
         <div class="form-group">
-          <input type="text" name="adminconnect" placeholder="Login" class="form-control" />
+          <input type="text" name="adminconnect" placeholder="Adresse email" class="form-control" />
         </div>
-        <div class="form-group"><input class="form-control" type="password" name="mdpconnect" placeholder="Password"></div>
+        <div class="form-group"><input class="form-control" type="password" name="mdpconnect" placeholder="Mots de passe"></div>
         <div class="form-group"><button class="btn btn-primary btn-block" type="submit" name="formconnexion">Connexion</button></div>
         <p><?php if(isset($erreur)) echo $erreur; ?></p>
       </form>
@@ -52,5 +56,5 @@ if(isset($_POST['formconnexion'])) {
   </body>
 </html>
 <?php
-
+}
 ?>

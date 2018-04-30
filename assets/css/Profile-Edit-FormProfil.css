@@ -25,7 +25,7 @@ div.profile-row {
 }
 
 div.alert {
-  width:40%;
+  width:90%;
 }
 
 .alert-col > .alert {
@@ -59,3 +59,18 @@ div.avatar-bg {
   margin-left:calc(50% - 100px);
 }
 
+div.avatar > img {
+  border-radius:50%;
+}
+
+.no-marging {
+  margin:0 !important;
+}
+
+.alert-col > .alert.display {
+  opacity:1;
+}
+
+img.avart-img {
+  max-width:200px;
+}

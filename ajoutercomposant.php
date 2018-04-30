@@ -23,8 +23,8 @@
         $ternairError = true;
 
         $nomCompo = !empty($_POST['nomCompo']) ? htmlspecialchars($_POST['nomCompo']) : $ternairError = false;
-        $lieu = intval(htmlspecialchars($_POST['lieu'])) ? htmlspecialchars($_POST['lieu']) : $ternairError = false;
-        $statut = intval(htmlspecialchars($_POST['statut'])) ? htmlspecialchars($_POST['statut']) : $ternairError = false;
+        $lieu = htmlspecialchars($_POST['lieu']) ? intval(htmlspecialchars($_POST['lieu'])) : $ternairError = false;
+        $statut = htmlspecialchars($_POST['statut']) ? intval(htmlspecialchars($_POST['statut'])) : $ternairError = false;
         $gabarit = htmlspecialchars($_POST['gabarit']) ? htmlspecialchars($_POST['gabarit']) : $ternairError = false;
         $type = htmlspecialchars($_POST['type']) ? htmlspecialchars($_POST['type']) : $ternairError = false;
         $fabricant = htmlspecialchars($_POST['fabricant']) ? htmlspecialchars($_POST['fabricant']) : $ternairError = false;
@@ -87,7 +87,7 @@
                     <select class="form-control" name="Call Time" required="" id="calltime">
                       <option value="">Lieu</option>
                       <?php
-                      //charge les categories
+                      //charge les salles
                       $reqsalle = $bdd->prepare("SELECT * FROM salle");
                       $reqsalle->execute();
                       $salleinfo = $reqsalle->fetchAll();
