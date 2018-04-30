@@ -33,7 +33,6 @@
         $addrMac = htmlspecialchars($_POST['addreMac']) ? htmlspecialchars($_POST['addreMac']) : $ternairError = false;
         $referenceCompo = htmlspecialchars($_POST['referenceCompo']) ? htmlspecialchars($_POST['referenceCompo']) : $ternairError = false;
 
-
         //test si les champs ne son pas vide
         if ($ternairError) {
           //test si les type son correcte
@@ -100,34 +99,28 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group has-feedback"><label for="from_name">Type</label><input class="form-control" type="text" name="type" required="" id="from_name" tabindex="-1"></div>
+              <div class="form-group has-feedback"><label for="from_name">Type</label><input class="form-control" type="text" name="typeCompo" required="" id="from_name" tabindex="-1"></div>
             </div>
             <div class="col-12 col-md-6" id="message" style="padding-right:20px;padding-left:20px;">
-              <fieldset></fieldset>
-              <div class="form-group has-feedback"><label for="from_email">Fabricant</label><input class="form-control" type="email" name="fabricant" required="" id="from_name"></div>
+              <div class="form-group has-feedback"><label for="from_name">Fabricant</label><input class="form-control" type="text" name="fabricantCompo" required="" id="from_name"></div>
               <div class="form-row">
                 <div class="col-sm-6">
-                  <div class="form-group has-feedback"><label for="from_phone">Modele</label><input class="form-control" type="text" name="modele" id="from_name"></div>
+                  <div class="form-group has-feedback"><label for="from_name">Modele</label><input class="form-control" type="text" name="modeleCompo" id="from_name"></div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group has-feedback"><label for="from_phone">Gabarit&nbsp;</label><input class="form-control" type="text" name="gabarit" id="from_name"></div>
+                  <div class="form-group has-feedback"><label for="from_name">Gabarit&nbsp;</label><input class="form-control" type="text" name="gabaritCompo" id="from_name"></div>
                 </div>
               </div>
-              <div class="form-group has-feedback"><label for="from_email">Référence</label><input class="form-control" type="email" name="referenceCompo" required="" id="from_name"></div>
-              <div class="form-group"><label for="Commentaire">Comments</label><textarea class="form-control" rows="5" name="Comments" placeholder="Entrer un commentaire ..." id="comments"></textarea></div><button class="btn btn-success active btn-block btn-lg float-left"
-              type="submit" data-bs-hover-animate="rubberBand" style="max-width:170px;margin-top:none;margin-left:none;">Valider&nbsp;<i class="fa fa-check"></i></button><button class="btn btn-danger active btn-block btn-lg float-right" type="submit"
-              data-bs-hover-animate="shake" style="max-width:170px;margin:none;margin-top:0px;padding-top:none;padding-right:none;">Annuler&nbsp;<i class="fa fa-remove"></i></button>
+              <div class="form-group has-feedback"><label for="from_name">Référence</label><input class="form-control" type="text" name="referenceCompo" required="" id="from_name"></div>
+              <div class="form-group"><label for="Commentaire">Commentaire</label><textarea class="form-control" rows="5" name="commentaireCompo" placeholder="Entrer un commentaire ..." id="comments"></textarea></div>
+              <button class="btn btn-success active btn-block btn-lg float-left" type="submit" data-bs-hover-animate="rubberBand" style="max-width:170px;margin-top:none;margin-left:none;">Valider&nbsp;<i class="fa fa-check"></i></button>
+              <button class="btn btn-danger active btn-block btn-lg float-right" type="submit" data-bs-hover-animate="shake" style="max-width:170px;margin:none;margin-top:0px;padding-top:none;padding-right:none;">Annuler&nbsp;<i class="fa fa-remove"></i></button>
               <hr>
-            </div>
-            <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
-            </div>
-            <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
             </div>
           </div>
         </form>
       </div>
     </section>
-
     <script src="/assets/js/jquery.minAjC.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.minAjC.js"></script>
     <script src="/assets/js/bs-animationAjC.js"></script>
