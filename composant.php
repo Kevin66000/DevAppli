@@ -14,7 +14,7 @@
 
   <body>
     <?php include 'php/nav.php';
-    if (isset($_SESSION['id']) && $_SESSION['pseudo'] == 'Admin') {
+    if (isset($_SESSION['idUser'])) {
       if (isset($_POST['delproduit'])) {
         $reqdel = $bdd->prepare("DELETE FROM photoproduit WHERE IDProduit = ?");
         $reqdel->execute(array($_POST['id']));
@@ -42,10 +42,10 @@
                 <table class="table">
                   <thead style="color:rgb(255,255,255);background-color:#e18416;font-size:12px;">
                     <tr style="font-size:11px;">
+                      <th>id&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Nom&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Référence&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Lieu&nbsp;<i class="fa fa-chevron-down"></i></th>
-                      <th style="max-width:66px;">Statut&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Gabarit&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th>Type&nbsp;<i class="fa fa-chevron-down"></i></th>
                       <th style="width:110px;">Fabricant&nbsp;<i class="fa fa-chevron-down"></i></th>
@@ -55,17 +55,17 @@
                     </tr>
                   </thead>
                   <?php
-                  $sql = "SELECT * FROM composant";
+                  $sql = "SELECT * FROM parcComposants";
                   $reqproduit = $bdd->prepare($sql);
                   $reqproduit->execute();
                   $dbrep = $reqproduit->fetchAll();
-                  foreach ($dbrep as $row) {
+                  foreach ($dbrep as $composant) {
                     ?>
                     <tbody>
                       <tr style="font-size:12px;">
                         <form method="post">
-                          <td id="composant <?php echo $composant["idComposants"] ?>">
-                            <span><?php  echo $composant["idComposants"]; ?></span>
+                          <td id="compo<?php echo $composant["idComposants"] ?>">
+                            <span><?php echo $composant["idComposants"]; ?></span>
                         </td>
                         <td>
                           <span><?php echo $comosant['nomComposants']?></span>
@@ -78,10 +78,6 @@
                         <td>
                           <span><?php echo $composant['idSalle']?></span>
                           <input type="text" class="form-control" name="modifilieu" value="<?php echo $composant['idSalle']?>" style="display:none;">
-                        </td>
-                        <td>
-                          <span><?php echo $composant['statutComposants']?></span>
-                          <input type="text" class="form-control" name="modifistatut" value="<?php echo $composant['statutComposants']?>" style="display:none;">
                         </td>
                         <td>
                           <span><?php echo $composant['gabaritComposants']?></span>
@@ -107,26 +103,15 @@
                           <span><?php echo $composant['addressMacComposants']?></span>
                           <input type="text" class="form-control" name="modifiaddreMAc" value="<?php echo $composant['addressMacComposants']?>" style="display:none;">
                         </td>
-                          <?php
-                          if ($user['actifUtilisateur'] == 1) {
-                            ?>
-                            <input type="checkbox" class="form-control" name="modifiactif[]" value="cocher" checked disabled>
-                            <?php
-                          }else {
-                            ?>
-                            <input type="checkbox" class="form-control" name="modifiactif[]" value="cocher" disabled>
-                            <?php
-                          }?>
-                        </td>
                         <td style="width: 150px; display: inline-block;">
-                          <input type="hidden" name="valueiduser" value="<?php echo $user['idUtilisateur']; ?>">
-                          <button class="btn btn-primary" type="button" data-userid="user<?php echo $user['idUtilisateur']; ?>" onclick="startuseredit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
+                          <input type="hidden" name="valueiduser" value="<?php echo $user['idComposants']; ?>">
+                          <button class="btn btn-primary" type="button" data-userid="compo<?php echo $user['idComposants']; ?>" onclick="startuseredit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
 
                           <button type="submit" class="btn btn-success" style="display:none" name="submitedituser">✓</button>
-                          <button type="button" class="btn btn-danger" style="display:none" data-userid="user<?php echo $user['idUtilisateur'] ?>" onclick="canceluseredit(this)">✗</button>
+                          <button type="button" class="btn btn-danger" style="display:none" data-userid="compo<?php echo $user['idUtilisateur'] ?>" onclick="canceluseredit(this)">✗</button>
                           <form method="post">
-                            <input type="hidden" name="valueiduser" value="<?php echo $user['idUtilisateur']; ?>">
-                            <button class="btn btn-danger" type="submit" name="submitrmuser" onclick="return confirm('confirmer la suppression de l\'utilisateur');" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
+                            <input type="hidden" name="valueiduser" value="<?php echo $user['idComposants']; ?>">
+                            <button class="btn btn-danger" type="submit" name="submitrmuser" onclick="return confirm('confirmer la suppression du composant);" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
                           </form>
                         </td>
                       </form>
