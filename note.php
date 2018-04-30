@@ -42,14 +42,13 @@
                                     <tr>
                                         <th style="width:92px;">Titre&nbsp;<i class="fa fa-chevron-down"></i></th>
                                         <th style="width:90px;">Statuts&nbsp;<i class="fa fa-chevron-down"></i></th>
-                                        <th style="width:120px;">Date début note&nbsp;<i class="fa fa-chevron-down"></i></th>
+                                        <th style="width:120px;">Date début note&nbsp;<i class="  fa fa-chevron-down"></i></th>
                                         <th style="width:110px;">Date fin note&nbsp;<i class="fa fa-chevron-down"></i></th>
                                         <th style="width:106px;">Urgence&nbsp;<i class="fa fa-chevron-down"></i></th>
                                         <th>Description&nbsp;<i class="fa fa-chevron-down"></i></th>
                                         <th style="width:163px;">Proprietaire&nbsp;<i class="fa fa-chevron-down"></i></th>
                                     </tr>
                                 </thead>
-                                <tbody>
                                 <?php
                                 $sql = "SELECT * FROM note";
                                 $reqproduit = $bdd->prepare($sql);
@@ -89,7 +88,6 @@
                                       </td>
                                     </form>
                                   </tr>
-
                                   <?php
                                 }
                                 ?>

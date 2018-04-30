@@ -50,41 +50,47 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr style="font-size:12px;">
-                                      <form method="post">
-                                        <td id="ticket<?php echo $tiket["idTikets"] ?>">
-                                          <span><?php echo $tiket["idTikets"]; ?></span>
-                                      </td>
-                                      <td>
-                                        <span><?php echo $tiket['titreTikets']?></span>
-                                        <input type="text" class="form-control" name="modifinom" value="<?php echo $tiket['titreTikets']?>" style="display:none;">
-                                      </td>
-                                      <td>
-                                        <span><?php echo $tiket['typeTikets']?></span>
-                                        <input type="text" class="form-control" name="modifitype" value="<?php echo $tiket['typeTikets']?>" style="display:none;">
-                                      </td>
-                                      <td>
-                                        <span><?php echo $tiket['dateOuvertureTikets']?></span>
-                                        <input type="text" class="form-control" name="modifidate" value="<?php echo $tiket['dateOuvertureTikets']?>" style="display:none;">
-                                      </td>
-                                      <td>
-                                        <span><?php echo $tiket['urgenceTikets']?></span>
-                                        <input type="text" class="form-control" name="modifiurgence" value="<?php echo $tiket['urgenceTikets']?>" style="display:none;">
-                                      </td>
-                                      <td>
-                                        <span><?php echo $tiket['descriptionTikets']?></span>
-                                        <input type="text" class="form-control" name="modifidescription" value="<?php echo $tiket['descriptionTikets']?>" style="display:none;">
-                                      </td>
-                                      <td>
-                                        <span><?php echo $tiket['proprietaireTikets']?></span>
-                                        <input type="text" class="form-control" name="modifiproprietaire" value="<?php echo $tiket['proprietaireTikets']?>" style="display:none;">
-                                      </td>
-                                    </form>
-                                  </tr>
-                                  <?php
-                                }
-                                ?>
-                                  </tbody>
++                                <?php
++                                $sql = "SELECT * FROM tikets";
++                                $reqproduit = $bdd->prepare($sql);
++                                $reqproduit->execute();
++                                $dbrep = $reqproduit->fetchAll();
++                                foreach ($dbrep as $tikets) {
++                                  ?>
++                                  <form method="post">
++                                        <td id="ticket<?php echo $tikets["idTikets"] ?>">
++                                          <span><?php echo $tikets["idTikets"]; ?></span>
++                                      </td>
++                                      <td>
++                                        <span><?php echo $tikets['titreTikets']?></span>
++                                        <input type="text" class="form-control" name="modifititre" value="<?php echo $tikets['titreTikets']?>" style="display:none;">
++                                      </td>
++                                      <td>
++                                        <span><?php echo $tikets['typeTikets']?></span>
++                                        <input type="text" class="form-control" name="modifistatut" value="<?php echo $tikets['typeTikets']?>" style="display:none;">
++                                      </td>
++                                      <td>
++                                        <span><?php echo $tikets['dateOuvertureTikets']?></span>
++                                        <input type="text" class="form-control" name="modifidatedeb" value="<?php echo $tikets['dateOuvertureTikets']?>" style="display:none;">
++                                      </td>
++                                      <td>
++                                        <span><?php echo $tikets['urgenceTikets']?></span>
++                                        <input type="text" class="form-control" name="modifidatefin" value="<?php echo $note['urgenceTikets']?>" style="display:none;">
++                                      </td>
++                                      <td>
++                                        <span><?php echo $tikets['descriptionTikets']?></span>
++                                        <input type="text" class="form-control" name="modifidescription" value="<?php echo $tikets['descriptionTikets']?>" style="display:none;">
++                                      </td>
++                                      <td>
++                                        <span><?php echo $tikets['proprietaireTikets']?></span>
++                                        <input type="text" class="form-control" name="modifiproprietaire" value="<?php echo $tikets['proprietaireTikets']?>" style="display:none;">
++                                      </td>
++                                    </form>
++                                  </tr>
++                                  <?php
++                                }
++                                ?>
++                                  </tbody>
                               </table>
                         </div>
                     </div>
