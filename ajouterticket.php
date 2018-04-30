@@ -84,6 +84,27 @@
                             <option value="">Demande</option>
                           </select>
                         </div>
+                        <div class="form-group"><label for="calltime">Statut</label>
+                          <select class="form-control" name="Call Time" required="" id="calltime">
+                            <option value=""> ... </option>
+                            <option value="">Non traité</option>
+                            <option value="">En cour de traitement</option>
+                            <option value="">Traité</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="calltime">composant</label>
+                            <select class="form-control" name="Call Time" required="" id="calltime">
+                          <?php
+                          //recup composant
+                          $reqcomp = $bdd->prepare("SELECT * FROM parccomposants");
+                          $reqcomp->execute();
+                          $compo = $reqcomp->fetchAll();
+                          foreach ($compo as $row) {
+                            echo '<option value="'.$row["idComposants"].'">'.'</option>';
+                          }
+                          ?>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6" id="message" style="padding-right:20px;padding-left:20px;">
                         <fieldset></fieldset>
