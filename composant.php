@@ -66,9 +66,9 @@
                         <form method="post">
                           <td id="compo<?php echo $composant["idComposants"] ?>">
                             <span><?php echo $composant["idComposants"]; ?></span>
-                        </td>
+                          </td>
                         <td>
-                          <span><?php echo $comosant['nomComposants']?></span>
+                          <span><?php echo $composant['nomComposants']?></span>
                           <input type="text" class="form-control" name="modifinom" value="<?php echo $composant['nomComposants']?>" style="display:none;">
                         </td>
                         <td>
@@ -104,18 +104,19 @@
                           <input type="text" class="form-control" name="modifiaddreMAc" value="<?php echo $composant['addressMacComposants']?>" style="display:none;">
                         </td>
                         <td style="width: 150px; display: inline-block;">
-                          <input type="hidden" name="valueiduser" value="<?php echo $user['idComposants']; ?>">
-                          <button class="btn btn-primary" type="button" data-userid="compo<?php echo $user['idComposants']; ?>" onclick="startuseredit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
+                          <input type="hidden" name="valueiduser" value="<?php echo $composant['idComposants']; ?>">
+                          <button class="btn btn-primary" type="button" data-compoid="compo<?php echo $composant['idComposants']; ?>" onclick="startcompoedit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
 
                           <button type="submit" class="btn btn-success" style="display:none" name="submitedituser">✓</button>
-                          <button type="button" class="btn btn-danger" style="display:none" data-userid="compo<?php echo $user['idUtilisateur'] ?>" onclick="canceluseredit(this)">✗</button>
+                          <button type="button" class="btn btn-danger" style="display:none" data-compoid="compo<?php echo $composant['idUtilisateur'] ?>" onclick="cancelcompoedit(this)">✗</button>
                           <form method="post">
-                            <input type="hidden" name="valueiduser" value="<?php echo $user['idComposants']; ?>">
+                            <input type="hidden" name="valueiduser" value="<?php echo $composant['idComposants']; ?>">
                             <button class="btn btn-danger" type="submit" name="submitrmuser" onclick="return confirm('confirmer la suppression du composant);" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
                           </form>
                         </td>
                       </form>
                     </tr>
+
                     <?php
                   }
                   ?>
@@ -130,5 +131,6 @@
     <script src="/assets/js/jquery.minPTU.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.minPTU.js"></script>
     <script src="/assets/js/bs-animationPTU.js"></script>
+    <script src="/assets/js/compo.js"></script>
   </body>
 </html>

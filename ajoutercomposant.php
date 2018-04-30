@@ -99,7 +99,7 @@
                 <textarea class="form-control" rows="5" name="Comments" placeholder="Entrer un commentaire ..."></textarea>
               </div>
               <button class="btn btn-success active btn-block btn-lg float-left" name="formjoutercomposent" type="submit" data-bs-hover-animate="rubberBand" style="max-width:170px;margin-top:none;margin-left:none;">Valider&nbsp;<i class="fa fa-check"></i></button>
-              <button class="btn btn-danger active btn-block btn-lg float-right" onclick="document.location.href = 'utilisateur.php'" type="button" data-bs-hover-animate="shake" style="max-width:170px;margin:none;margin-top:0px;padding-top:none;padding-right:none;">Annuler&nbsp;<i class="fa fa-remove"></i></button>
+              <button class="btn btn-danger active btn-block btn-lg float-right" onclick="document.location.href = 'composant.php'" type="button" data-bs-hover-animate="shake" style="max-width:170px;margin:none;margin-top:0px;padding-top:none;padding-right:none;">Annuler&nbsp;<i class="fa fa-remove"></i></button>
               <hr>
             </div>
           </div>
