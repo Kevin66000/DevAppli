@@ -55,17 +55,16 @@
                     </tr>
                   </thead>
                   <?php
-                  $sql = "SELECT * FROM composant";
-                  $reqproduit = $bdd->prepare($sql);
-                  $reqproduit->execute();
-                  $dbrep = $reqproduit->fetchAll();
-                  foreach ($dbrep as $row) {
+                  $reqSelectComposants = $bdd->prepare("SELECT * FROM utilisateur");
+                  $reqSelectComposants->execute();
+                  $composants = $reqSelectComposants->fetchAll();
+                  foreach ($composants as $composant) {
                     ?>
                     <tbody>
                       <tr style="font-size:12px;">
                         <form method="post">
-                          <td id="composant <?php echo $composant["idComposants"] ?>">
-                            <span><?php  echo $composant["idComposants"]; ?></span>
+                          <td id="composant<?php echo $composant["idComposants"] ?>">
+                            <span><?php echo $composant["idComposants"]; ?></span>
                         </td>
                         <td>
                           <span><?php echo $comosant['nomComposants']?></span>

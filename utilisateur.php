@@ -73,7 +73,7 @@
         <?php
       }
       //selectionne les toutes les utilisateurs
-      $reqSelectUsers = $bdd->prepare("SELECT * FROM utilisateur");
+      $reqSelectUsers = $bdd->prepare("SELECT * FROM parcComposants");
       $reqSelectUsers->execute();
       $users = $reqSelectUsers->fetchAll();
       ?>
