@@ -67,22 +67,43 @@
                             <div class="form-group has-feedback"><label for="from_email">Titre</label><input class="form-control" type="text" name="titreTicket"></div>
                             <div class="form-group"><label for="calltime">Urgence</label>
                               <select class="form-control" name="Call Time" required="" id="calltime">
-                                <option value="">Etat</option>
-                                <option value="">Très haute</option>
-                                <option value="">Haute</option>
-                                <option value="">Moyenne</option>
-                                <option value="">Basse</option>
-                                <option value="">Très basse</option>
+                                <option value="1">Etat</option>
+                                <option value="2">Très haute</option>
+                                <option value="3">Haute</option>
+                                <option value="4">Moyenne</option>
+                                <option value="5">Basse</option>
+                                <option value="6">Très basse</option>
                               </select>
                             </div>
                         </fieldset>
                         <div class="form-group has-feedback">
                           <label for="from_phone">Type</label>
                           <select class="form-control" name="Call Time" required="" id="calltime">
-                            <option value="">Type</option>
-                            <option value="">Incident</option>
-                            <option value="">Demande</option>
+                            <option value="1">Type</option>
+                            <option value="2">Incident</option>
+                            <option value="3">Demande</option>
                           </select>
+                        </div>
+                        <div class="form-group"><label for="calltime">Statut</label>
+                          <select class="form-control" name="Call Time" required="" id="calltime">
+                            <option value=""> ... </option>
+                            <option value="">Non traité</option>
+                            <option value="">En cour de traitement</option>
+                            <option value="">Traité</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="calltime">composant</label>
+                            <select class="form-control" name="Call Time" required="" id="calltime">
+                          <?php
+                          //recup composant
+                          $reqcomp = $bdd->prepare("SELECT * FROM parccomposants");
+                          $reqcomp->execute();
+                          $compo = $reqcomp->fetchAll();
+                          foreach ($compo as $row) {
+                            echo '<option value="'.$row["idComposants"].'">'.'</option>';
+                          }
+                          ?>
                         </div>
                     </div>
                     <div class="col-12 col-md-6" id="message" style="padding-right:20px;padding-left:20px;">
