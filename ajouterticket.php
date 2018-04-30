@@ -16,7 +16,7 @@
     if (isset($_SESSION['id']) && $_SESSION['admin'] == 'Admin') {
 
       //si le boutton Valider est clicker
-      if (isset($_POST['formjouterticket'])) {
+      if (isset($_POST['formajouterticket'])) {
 
         //variable
         $ternairError = true;

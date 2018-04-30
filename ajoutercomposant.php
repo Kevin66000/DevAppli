@@ -102,15 +102,10 @@
               <button class="btn btn-danger active btn-block btn-lg float-right" onclick="document.location.href = 'utilisateur.php'" type="button" data-bs-hover-animate="shake" style="max-width:170px;margin:none;margin-top:0px;padding-top:none;padding-right:none;">Annuler&nbsp;<i class="fa fa-remove"></i></button>
               <hr>
             </div>
-            <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
-            </div>
-            <div class="col-md-6" style="padding-left:20px;padding-right:20px;">
-            </div>
           </div>
         </form>
       </div>
     </section>
-
     <script src="/assets/js/jquery.minAjC.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.minAjC.js"></script>
     <script src="/assets/js/bs-animationAjC.js"></script>
