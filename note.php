@@ -51,15 +51,13 @@
                                 </thead>
                                 <tbody>
                                     <tr style="font-size:12px;">
-                                        <td><strong>Cell 1</strong></td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                        <td>Cell 7</td>
-                                        <td style="max-width:54px;"><button class="btn btn-primary float-left" type="button" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button><button class="btn btn-primary float-right"
-                                                type="button" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button></td>
+                                        <td><strong>Test 1</strong></td>
+                                        <td>Test 2</td>
+                                        <td>Test 3</td>
+                                        <td>Test 4</td>
+                                        <td>Test 5</td>
+                                        <td>Test 6</td>
+                                        <td>Test 7</td>
                                     </tr>
                                 </tbody>
                             </table>
