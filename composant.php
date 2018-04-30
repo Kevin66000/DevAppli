@@ -15,11 +15,29 @@
   <body>
     <?php include 'php/nav.php';
     if (isset($_SESSION['idUser'])) {
-      if (isset($_POST['delproduit'])) {
-        $reqdel = $bdd->prepare("DELETE FROM photoproduit WHERE IDProduit = ?");
-        $reqdel->execute(array($_POST['id']));
-        $reqdel = $bdd->prepare("DELETE FROM produits WHERE IDProduit = ?");
-        $reqdel->execute(array($_POST['id']));
+
+      if (isset($_POST['submiteditcompo'])) {
+
+        $valueidcompo = !empty($_POST['valueidcompo']) ? htmlspecialchars($_POST['valueidcompo']) : null;
+        $modifinom = !empty($_POST['modifinom']) ? htmlspecialchars($_POST['modifinom']) : null;
+        $modifiref = !empty($_POST['modifiref']) ? htmlspecialchars($_POST['modifiref']) : null;
+        $modifisalle = !empty($_POST['modifisalle']) ? intval(htmlspecialchars($_POST['modifisalle'])) : null;
+        $modifigabarit = !empty($_POST['modifigabarit']) ? htmlspecialchars($_POST['modifigabarit']) : null;
+        $modifitype = !empty($_POST['modifitype']) ? htmlspecialchars($_POST['modifitype']) : null;
+        $modififabricant = !empty($_POST['modififabricant']) ? htmlspecialchars($_POST['modififabricant']) : null;
+        $modifimodele = !empty($_POST['modifimodele']) ? htmlspecialchars($_POST['modifimodele']) : null;
+        $modifinumSerie = !empty($_POST['modifinumSerie']) ? htmlspecialchars($_POST['modifinumSerie']) : null;
+        $modifiaddreMAc = !empty($_POST['modifiaddreMAc']) ? htmlspecialchars($_POST['modifiaddreMAc']) : null;
+
+
+        $requpdateuser = $bdd->prepare("UPDATE `parcComposants` SET nomComposants = ?, gabaritComposants = ?, typeComposants = ?,`fabricantComposants`= ?,`modeleComposants`= ?,`numSerieComposants`= ?,`addressMacComposants`= ?,`referenceComposants`= ?,`idSalle`= ? WHERE idComposants = ?");
+        $requpdateuser->execute(array($modifinom, $modifigabarit, $modifitype, $modififabricant, $modifimodele, $modifinumSerie, $modifiaddreMAc, $modifiref, $modifisalle, $valueidcompo));
+
+        }
+
+      if (isset($_POST['submitrmcompo'])) {
+        $reqdel = $bdd->prepare("UPDATE `parcComposants` SET corbeilleComposants = 1 WHERE idComposants = ?");
+        $reqdel->execute(array($_POST['valueidcompo']));
       }
     }
     ?>
@@ -55,7 +73,7 @@
                     </tr>
                   </thead>
                   <?php
-                  $sql = "SELECT * FROM parcComposants";
+                  $sql = "SELECT * FROM parcComposants WHERE corbeilleComposants = 0";
                   $reqproduit = $bdd->prepare($sql);
                   $reqproduit->execute();
                   $dbrep = $reqproduit->fetchAll();
@@ -73,11 +91,11 @@
                         </td>
                         <td>
                           <span><?php echo $composant['referenceComposants']?></span>
-                          <input type="text" class="form-control" name="modifinom" value="<?php echo $composant['referenceComposants']?>" style="display:none;">
+                          <input type="text" class="form-control" name="modifiref" value="<?php echo $composant['referenceComposants']?>" style="display:none;">
                         </td>
                         <td>
                           <span><?php echo $composant['idSalle']?></span>
-                          <input type="text" class="form-control" name="modifilieu" value="<?php echo $composant['idSalle']?>" style="display:none;">
+                          <input type="text" class="form-control" name="modifisalle" value="<?php echo $composant['idSalle']?>" style="display:none;">
                         </td>
                         <td>
                           <span><?php echo $composant['gabaritComposants']?></span>
@@ -104,14 +122,14 @@
                           <input type="text" class="form-control" name="modifiaddreMAc" value="<?php echo $composant['addressMacComposants']?>" style="display:none;">
                         </td>
                         <td style="width: 150px; display: inline-block;">
-                          <input type="hidden" name="valueiduser" value="<?php echo $composant['idComposants']; ?>">
+                          <input type="hidden" name="valueidcompo" value="<?php echo $composant['idComposants']; ?>">
                           <button class="btn btn-primary" type="button" data-compoid="compo<?php echo $composant['idComposants']; ?>" onclick="startcompoedit(this)" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button>
 
-                          <button type="submit" class="btn btn-success" style="display:none" name="submitedituser">✓</button>
+                          <button type="submit" class="btn btn-success" style="display:none" name="submiteditcompo">✓</button>
                           <button type="button" class="btn btn-danger" style="display:none" data-compoid="compo<?php echo $composant['idComposants'] ?>" onclick="cancelcompoedit(this)">✗</button>
                           <form method="post">
-                            <input type="hidden" name="valueiduser" value="<?php echo $composant['idComposants']; ?>">
-                            <button class="btn btn-danger" type="submit" name="submitrmuser" onclick="return confirm('confirmer la suppression du composant);" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
+                            <input type="hidden" name="valueidcompo" value="<?php echo $composant['idComposants']; ?>">
+                            <button class="btn btn-danger" type="submit" name="submitrmcompo" onclick="return confirm('confirmer la suppression du composant);" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button>
                           </form>
                         </td>
                       </form>
