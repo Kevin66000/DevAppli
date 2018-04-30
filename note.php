@@ -50,16 +50,50 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $sql = "SELECT * FROM note";
+                                $reqproduit = $bdd->prepare($sql);
+                                $reqproduit->execute();
+                                $dbrep = $reqproduit->fetchAll();
+                                foreach ($dbrep as $note) {
+                                  ?>
+                                  <tbody>
                                     <tr style="font-size:12px;">
-                                        <td><strong>Test 1</strong></td>
-                                        <td>Test 2</td>
-                                        <td>Test 3</td>
-                                        <td>Test 4</td>
-                                        <td>Test 5</td>
-                                        <td>Test 6</td>
-                                        <td>Test 7</td>
-                                    </tr>
-                                </tbody>
+                                      <form method="post">
+                                        <td id="ticket<?php echo $note["idNotes"] ?>">
+                                          <span><?php echo $note["idNotes"]; ?></span>
+                                      </td>
+                                      <td>
+                                        <span><?php echo $note['titreNotes']?></span>
+                                        <input type="text" class="form-control" name="modifititre" value="<?php echo $note['titreNotes']?>" style="display:none;">
+                                      </td>
+                                      <td>
+                                        <span><?php echo $note['statutNotes']?></span>
+                                        <input type="text" class="form-control" name="modifistatut" value="<?php echo $note['statutNotes']?>" style="display:none;">
+                                      </td>
+                                      <td>
+                                        <span><?php echo $note['dateDebutNotes']?></span>
+                                        <input type="text" class="form-control" name="modifidatedeb" value="<?php echo $note['dateDebutNotes']?>" style="display:none;">
+                                      </td>
+                                      <td>
+                                        <span><?php echo $note['dateFinNotes']?></span>
+                                        <input type="text" class="form-control" name="modifidatefin" value="<?php echo $note['dateFinNotes']?>" style="display:none;">
+                                      </td>
+                                      <td>
+                                        <span><?php echo $note['descriptionNotes']?></span>
+                                        <input type="text" class="form-control" name="modifidescription" value="<?php echo $note['descriptionNotes']?>" style="display:none;">
+                                      </td>
+                                      <td>
+                                        <span><?php echo $note['proprietairetNotes']?></span>
+                                        <input type="text" class="form-control" name="modifiproprietaire" value="<?php echo $note['proprietairetNotes']?>" style="display:none;">
+                                      </td>
+                                    </form>
+                                  </tr>
+
+                                  <?php
+                                }
+                                ?>
+                                  </tbody>
                             </table>
                         </div>
                     </div>
