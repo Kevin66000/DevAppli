@@ -51,7 +51,6 @@
                                 </thead>
                                 <tbody>
                                     <tr style="font-size:12px;">
-<<<<<<< HEAD
                                       <form method="post">
                                         <td id="ticket<?php echo $tiket["idTikets"] ?>">
                                           <span><?php echo $tiket["idTikets"]; ?></span>
@@ -87,20 +86,6 @@
                                 ?>
                                   </tbody>
                               </table>
-=======
-                                        <td><strong>Cell 1</strong></td>
-                                        <td>Cell 2</td>
-                                        <td>Cell 3</td>
-                                        <td>Cell 4</td>
-                                        <td>Cell 5</td>
-                                        <td>Cell 6</td>
-                                        <td>Cell 7</td>
-                                        <td style="max-width:54px;"><button class="btn btn-primary float-left" type="button" style="margin-right:0px;background-color:rgb(0,133,255);color:rgb(255,255,255);"><i class="fa fa-edit"></i></button><button class="btn btn-primary float-right"
-                                                type="button" style="background-color:rgb(255,15,0);color:rgb(255,255,255);"><i class="fa fa-close"></i></button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
->>>>>>> 73d97dc593a7863f203af5329c8eb77f5298d7be
                         </div>
                     </div>
                 </div>
